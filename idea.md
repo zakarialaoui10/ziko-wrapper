@@ -1,6 +1,6 @@
 ## Syntaxe 
 ```jsx
  <ZikoUI
-  ui:text("hello world").style({color:"red"})
+  script:text("hello world").style({color:"red"})
  />
 ```
