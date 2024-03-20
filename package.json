@@ -4,8 +4,7 @@
   "description": "render ziko element inside react app",
   "type": "module",
   "source": "src/index.js",
-  "main": "dist/react-ziko.cjs",
-  "module": "dist/react-ziko.mjs",
+  "main": "dist/react-ziko.jsx",
   "files": [
     "src",
     "dist",
@@ -35,7 +34,6 @@
     "ziko": "^0.0.4"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.24.1",
     "@babel/preset-react": "^7.24.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",

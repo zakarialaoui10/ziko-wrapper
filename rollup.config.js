@@ -15,9 +15,8 @@ const banner= `
 export default {
   input: 'src/index.jsx',
   output: {
-    file: 'dist/react-ziko.js',
-    format: 'umd',
-    name: 'ZikoUI',
+    file: 'dist/react-ziko.jsx',
+    //name: 'ZikoUI',
     globals: {
       react: 'React',
       ziko : 'Ziko'
@@ -29,8 +28,9 @@ export default {
     commonjs(),
     babel({
       babelHelpers: 'bundled',
-      presets: ['@babel/preset-env', '@babel/preset-react'],
+      presets: ['@babel/preset-react'],
     }),
   ],
   external: ['react','ziko'],
 };
+
