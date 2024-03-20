@@ -1,7 +1,7 @@
 {
   "name": "react-ziko",
   "version": "0.0.0",
-  "description": "render ziko element inside react app",
+  "description": "rendering ziko elements within a React application",
   "type": "module",
   "source": "src/index.js",
   "main": "dist/react-ziko.jsx",

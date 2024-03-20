@@ -16,7 +16,6 @@ export default {
   input: 'src/index.jsx',
   output: {
     file: 'dist/react-ziko.jsx',
-    //name: 'ZikoUI',
     globals: {
       react: 'React',
       ziko : 'Ziko'
