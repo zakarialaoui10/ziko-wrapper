@@ -1,7 +1,17 @@
 ## React
  ### Syntaxe 
-  ```jsx
-   <ZikoUI ui={ZikoUIElement} />
+ ```jsx
+  import {text} from "ziko";
+   function test(){
+    const ui = text("hello").style({
+      color:"green"
+     }).render(false).onClick(()=>txt.value = " From Zikojs"); 
+     return (
+      <>
+      <ZikoUI ui={ZikoUIElement} />
+      </>
+     )
+  }
   ```
 ## Vue 
  ```html
