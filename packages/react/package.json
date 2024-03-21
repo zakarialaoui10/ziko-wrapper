@@ -3,21 +3,10 @@
   "version": "0.0.0",
   "description": "rendering ziko elements within a React application",
   "type": "module",
-  "source": "src/index.js",
-  "main": "dist/react-ziko.jsx",
-  "files": [
-    "react",
-    "src",
-    "dist",
-    "LICENCE"
-  ],
-  "scripts": {
-    "dev": "rollup -c rollup.config.js -w",
-    "build": "rollup -c rollup.config.js"
-  },
+  "main": "index.jsx",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zakarialaoui10/react-ziko.git"
+    "url": "git+https://github.com/zakarialaoui10/ziko-integration.git"
   },
   "keywords": [
     "ziko",
@@ -27,18 +16,11 @@
   "author": "zakaria elalaoui",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zakarialaoui10/react-ziko/issues"
+    "url": "https://github.com/zakarialaoui10/ziko-integration/issues"
   },
-  "homepage": "https://github.com/zakarialaoui10/react-ziko#readme",
+  "homepage": "https://github.com/zakarialaoui10/ziko-integration/react#readme",
   "dependencies": {
     "react": "^18.2.0",
     "ziko": "^0.0.4"
-  },
-  "devDependencies": {
-    "@babel/preset-react": "^7.24.1",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "rollup": "^4.13.0"
   }
 }

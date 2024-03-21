@@ -1,0 +1,25 @@
+{
+    "name": "lit-ziko",
+    "version": "0.0.0",
+    "description": "rendering ziko elements within a Lit application",
+    "type": "module",
+    "main": "index.jsx",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/zakarialaoui10/ziko-integration.git"
+    },
+    "keywords": [
+      "ziko",
+      "lit"
+    ],
+    "author": "zakaria elalaoui",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/zakarialaoui10/ziko-integration/issues"
+    },
+    "homepage": "https://github.com/zakarialaoui10/ziko-integration/lit#readme",
+    "dependencies": {
+      "ziko": "^0.0.4"
+    }
+  }
+  

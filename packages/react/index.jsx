@@ -9,7 +9,7 @@ function ZikoUI({ ui }) {
     }
   }, [ui]);
   return (
-      <div ref={containerRef} data-engine="ziko"></div>
+      <ziko-ui ref={containerRef} data-engine="ziko"></ziko-ui>
   );
 }
 export default ZikoUI;
