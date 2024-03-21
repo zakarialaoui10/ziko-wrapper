@@ -1,24 +1,14 @@
 ## React
  ### Syntaxe 
- ```jsx
-  import {text} from "ziko";
-   function test(){
-    const ui = text("hello").style({
-      color:"green"
-     }).render(false).onClick(()=>txt.value = " From Zikojs"); 
-     return (
-      <>
-      <ZikoUI ui={ZikoUIElement} />
-      </>
-     )
-  }
+  ```jsx
+   <ZikoUI ui={ZikoUIElement} />
   ```
 ## Vue 
  ```html
- <script setup>
+   <script setup>
    import {text} from "ziko";
    const ui = text("hello").style({
-      color:"green"
+    color:"green"
     }).render(false).onClick(()=>txt.value = " From Zikojs");
 </script>
 <template>

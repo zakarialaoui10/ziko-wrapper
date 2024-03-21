@@ -1,10 +1,10 @@
-<div bind:this={containerRef} data-engine="ziko"></div>
+<ziko-ui bind:this={containerRef} data-engine="ziko"></ziko-ui>
 
 <script>
-  let containerRef;
-
   import { onMount } from 'svelte';
-
+  import ZikoUIElement from "ziko";
+  let containerRef;
+  
   onMount(() => {
     if (containerRef && ui instanceof ZikoUIElement) {
       containerRef.innerHTML = "";

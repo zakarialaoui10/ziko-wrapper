@@ -1,0 +1,35 @@
+{
+  "name": "ziko-wrapper",
+  "version": "0.0.0",
+  "description": "```jsx\r    <ZikoUI ui={ZikoUIElement} />\r   ```\r ## Vue \r  ```html\r    <script setup>\r    import {text} from \"ziko\";\r    const ui = text(\"hello\").style({\r     color:\"green\"\r     }).render(false).onClick(()=>txt.value = \" From Zikojs\");\r </script>\r <template>\r   <ZikoUI :ui=\"ui\"/>\r </template>",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakarialaoui10/ziko-wrapper.git"
+  },
+  "keywords": [
+    "ziko",
+    "react",
+    "vue",
+    "angular",
+    "svelte",
+    "lit",
+    "solid",
+    "preact",
+    "next",
+    "nuxt",
+    "svelteKit"
+  ],
+  "author": "zakaria elalaoui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zakarialaoui10/ziko-wrapper/issues"
+  },
+  "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme"
+}
