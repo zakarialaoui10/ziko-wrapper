@@ -5,10 +5,10 @@
   ```
 ## Vue 
  ```html
-   <script setup>
+ <script setup>
    import {text} from "ziko";
    const ui = text("hello").style({
-    color:"green"
+      color:"green"
     }).render(false).onClick(()=>txt.value = " From Zikojs");
 </script>
 <template>
