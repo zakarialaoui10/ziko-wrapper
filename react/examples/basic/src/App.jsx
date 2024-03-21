@@ -1,5 +1,8 @@
 import { Flex, p, h2  } from "ziko";
 import ZikoUI from "ziko-wrapper/react"
+const style={
+  background:"red"
+}
 const ui = Flex(
   h2("Hello world").onClick((e) =>
     e.target.parent.append(
@@ -22,7 +25,7 @@ const ui = Flex(
 export default function App() {
   return (
     <main>
-      <ZikoUI ui={ui} />
+      <ZikoUI ui={ui} style={style}/>
     </main>
   );
 }
