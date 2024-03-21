@@ -3,7 +3,7 @@ import {ZikoUIElement} from "ziko";
 function ZikoUI({ ui }) {
   const containerRef = useRef(null);
   useEffect(() => {
-    console.log(globalThis)
+    globalThis.__ZikoConfig__.setDefault({render:false})
     if (containerRef.current && ui && ui instanceof ZikoUIElement) {
       containerRef.current.innerHTML = "";
       containerRef.current.appendChild(ui.element);

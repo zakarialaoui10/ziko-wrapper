@@ -1,7 +1,5 @@
 import { Flex, p, h2  } from "ziko";
-//import ZikoUI from "react-ziko";
 import ZikoUI from "ziko-wrapper/react"
-//__ZikoConfig__.setDefault({render:false})
 const ui = Flex(
   h2("Hello world").onClick((e) =>
     e.target.parent.append(
@@ -24,7 +22,7 @@ const ui = Flex(
 export default function App() {
   return (
     <main>
-      <ZikoUI ui={ui.render(false)} />
+      <ZikoUI ui={ui} />
     </main>
   );
 }
