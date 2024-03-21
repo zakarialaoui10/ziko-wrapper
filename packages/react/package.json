@@ -1,15 +1,10 @@
 {
-  "name": "react-ziko",
+  "name": "@ziko/react",
   "version": "0.0.0",
   "description": "rendering ziko elements within a React application",
   "type": "module",
   "source": "src/index.js",
-  "main": "dist/react-ziko.jsx",
-  "files": [
-    "src",
-    "dist",
-    "LICENCE"
-  ],
+  "main": "dist/@ziko/react.jsx",
   "scripts": {
     "dev": "rollup -c rollup.config.js -w",
     "build": "rollup -c rollup.config.js"

@@ -21,3 +21,6 @@ export default function App() {
 }
 
 ```
+# Dependencies
+ - [React](https://react.dev/) :  
+ - [Zikojs](https://github.com/zakarialaoui10/ziko.js) :
