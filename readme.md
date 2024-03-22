@@ -17,8 +17,7 @@ This outil aims to embed zikojs elements within various frameworks
     <main>
       <ZikoUI ui={ui} style={style}/>
     </main>
-  );
-}
+  )}
   ```
 ## Vue / Nuxt
  ```html
