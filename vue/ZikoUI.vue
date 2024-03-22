@@ -8,10 +8,10 @@ export default {
     ui: Object
   },
   mounted() {
-    globalThis.__ZikoConfig__.setDefault({render:false})
+    //globalThis.__ZikoConfig__.setDefault({render:false})
     if (this.$refs.containerRef && this.ui instanceof ZikoUIElement) {
       this.$refs.containerRef.innerHTML = "";
-      this.$refs.containerRef.appendChild(this.ui.element);
+      this.$refs.containerRef.appendChild(this.ui.render(false).element);
     }
   }
 };

@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "vue": "^3.4.21",
-    "ziko": "^0.0.5",
     "ziko-wrapper": "^0.0.0"
   },
   "devDependencies": {
