@@ -1,5 +1,11 @@
-## React
- ### Syntaxe 
+# Overview 
+this outil aims to embed zikojs elements within various frameworks 
+# Install
+```shell
+ npm install ziko-wrapper
+```
+# Usage
+## React / Next
   ```jsx
   import {text} from "ziko";
   import ZikoUI from "ziko-wrapper/react"
@@ -13,9 +19,8 @@
     </main>
   );
 }
-
   ```
-## Vue 
+## Vue / Nuxt
  ```html
    <script setup>
    import {text} from "ziko";
