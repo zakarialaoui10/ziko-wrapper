@@ -15,7 +15,7 @@ This outil aims to embed zikojs elements within various frameworks
   export default function App() {
   return (
     <main>
-      <ZikoUI ui={ui} style={style}/>
+      <ZikoUI ui={ui} />
     </main>
   )}
   ```
