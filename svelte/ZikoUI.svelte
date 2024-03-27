@@ -2,7 +2,7 @@
 
 <script>
   import { onMount } from 'svelte';
-  import ZikoUIElement from "ziko";
+  import {ZikoUIElement} from "ziko";
   let containerRef;
   
   onMount(() => {
