@@ -1,5 +1,5 @@
 # Overview 
-this outil aims to embed zikojs elements within various frameworks 
+This outil aims to embed zikojs elements within various frameworks 
 # Install
 ```shell
  npm install ziko-wrapper
@@ -15,39 +15,36 @@ this outil aims to embed zikojs elements within various frameworks
   export default function App() {
   return (
     <main>
-      <ZikoUI ui={ui} style={style}/>
+      <ZikoUI ui={ui} />
     </main>
-  );
-}
+  )}
   ```
 ## Vue / Nuxt
  ```html
-   <script setup>
-   import {text} from "ziko";
-   import ZikoUI from "ziko-wrapper/vue"
-   const ui = text("hello world").style({
-    color:"green"
-    })
+<script setup>
+import { text } from "ziko";
+import ZikoUI from "ziko-wrapper/vue";
+const ui = text("hello world").style({
+  color: "green",
+});
 </script>
 <template>
-  <ZikoUI :ui="ui"/>
+  <ZikoUI :ui="ui" />
 </template>
-
   ```
 ## Angular 
 ## Svelte
 ```html
 <script>
-  import ZikoUI from "ziko-wrapper/svelte";
-  import {text} from "ziko";
-  const ui = text("hello world").style({
-    color:"green"
-    })
+import ZikoUI from "ziko-wrapper/svelte";
+import { text } from "ziko";
+const ui = text("hello world").style({
+  color: "green",
+});
 </script>
 <main>
  <ZikoUI ui={ui}/>
 </main>
-
 
 ```
 ## Lit 
