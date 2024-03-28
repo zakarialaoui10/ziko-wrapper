@@ -10,4 +10,4 @@
  It bypasses React's virtual DOM
 
 
-.. install ziko to fix svelte wrapper
+.. install ziko to fix svelte wrapper 
