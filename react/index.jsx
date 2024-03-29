@@ -9,11 +9,6 @@ function ZikoUI({ ui }) {
       containerRef.current.appendChild(ui.element);
     }
   }, [ui]);
-  useEffect(() => {
-    if (containerRef.current && style) {
-      Object.assign(containerRef.current.style, style);
-    }
-  }, [style]);
   return (
       <ziko-ui ref={containerRef} data-engine="ziko"></ziko-ui>
   );

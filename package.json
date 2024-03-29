@@ -1,6 +1,6 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "integrate zikojs elements within other framework like vue react ..",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/zakarialaoui10/ziko-wrapper/issues"
   },
-  "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme"
+  "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
+  "dependencies": {
+    "ziko": "^0.0.5"
+  }
 }
