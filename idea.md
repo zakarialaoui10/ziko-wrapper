@@ -11,3 +11,5 @@
 
 
 .. install ziko to fix svelte wrapper 
+
+add doc 
