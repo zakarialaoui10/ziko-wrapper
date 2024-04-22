@@ -7,7 +7,7 @@ const ui = Flex(
   h2("Hello world").onClick((e) =>
     e.target.parent.append(
       p("Dabrto 3liha wahd chahrin dyal ichhar \n ghi desactiviw ").style({
-        color: "red",
+        color: "cyan",
         fontSize: "1.3rem",
       }),
     ),
