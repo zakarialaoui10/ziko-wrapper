@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
   "dependencies": {
-    "ziko": "^0.0.5"
+    "ziko": "^0.0.7"
   }
 }

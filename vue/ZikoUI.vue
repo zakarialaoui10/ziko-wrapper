@@ -1,5 +1,5 @@
 <template>
-  <ziko-ui ref="containerRef" data-engine="ziko"></ziko-ui>
+  <section ref="containerRef" data-engine="ziko"></section>
 </template>
 <script>
 import {ZikoUIElement} from "ziko"
@@ -16,8 +16,3 @@ export default {
   }
 };
 </script>
-<style scoped>
-  ziko-ui{
-    display:block;
-  }
-</style>

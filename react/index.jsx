@@ -14,9 +14,15 @@ function ZikoUI({ ui }) {
       containerRef.current.innerHTML = "";
       containerRef.current.appendChild(ui.element);
     }
+    // Cleanup function to remove the UI element when the component unmounts or UI changes
+    return () => {
+      if (containerRef.current) {
+        containerRef.current.innerHTML = "";
+      }
+    };
   }, [ui]);
   return (
-      <ziko-ui ref={containerRef} data-engine="ziko"></ziko-ui>
+      <section ref={containerRef} data-engine="ziko"></section>
   );
 }
 export default ZikoUI;

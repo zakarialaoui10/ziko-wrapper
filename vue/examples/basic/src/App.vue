@@ -1,5 +1,6 @@
 <script setup>
-import ZikoUI from "ziko-wrapper/vue";
+// import ZikoUI from "ziko-wrapper/vue";
+import ZikoUI from "../../../ZikoUI.vue";
 import {Flex,Canvas,canvasCircle,map} from "ziko";
 let scene=Canvas("80%","80%").view(-10,-10,10,10)
 scene.onPtrDown(e=>{

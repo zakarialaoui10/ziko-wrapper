@@ -25,7 +25,9 @@ const ui = Flex(
 export default function App() {
   return (
     <main>
+      <div>jj</div>
       <ZikoUI ui={ui} style={style}/>
+      <div>jj</div>
     </main>
   );
 }

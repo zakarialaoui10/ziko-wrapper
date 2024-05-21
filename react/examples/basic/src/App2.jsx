@@ -1,4 +1,4 @@
-import ZikoUI from "./ZikoUI.jsx";
+import ZikoUI from "ziko-wrapper/react";
 import { Flex, p, h2, input } from "ziko";
 import { useState } from "react";
 
@@ -35,7 +35,7 @@ export default function App() {
   return (
     <main>
       <div>{txt}</div>
-      <ZikoUI ui={ui.render(false)} />
+      <ZikoUI ui={ui}/>
     </main>
   );
 }
