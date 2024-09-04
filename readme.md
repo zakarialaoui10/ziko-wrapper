@@ -36,7 +36,7 @@ const ui = text("hello world").style({
 ## Svelte
 ```html
 <script>
-import ZikoUI from "ziko-wrapper/svelte";
+import ZikoUI from "ziko-wrapper/svelte/ZikoUI.svelte";
 import { text } from "ziko";
 const ui = text("hello world").style({
   color: "green",

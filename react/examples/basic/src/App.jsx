@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import { Flex, p, h2  } from "ziko";
 import ZikoUI from "ziko-wrapper/react"
 const style={
   background:"red"
 }
 const ui = Flex(
-  h2("Hello world").onClick((e) =>
+  h2("Hello world").onClick((e) => 
     e.target.parent.append(
       p("Dabrto 3liha wahd chahrin dyal ichhar \n ghi desactiviw ").style({
         color: "cyan",
@@ -27,7 +28,7 @@ export default function App() {
     <main>
       <div>jj</div>
       <ZikoUI ui={ui} style={style}/>
-      <div>jj</div>
+      <div></div>
     </main>
   );
 }
