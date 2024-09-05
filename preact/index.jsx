@@ -1,6 +1,7 @@
+import React from "preact/compat";
 import  {useRef, useEffect } from "preact/hooks";
-import {ZikoUIElement} from "ziko";
-export default function ZikoUI({ui}){
+import {ZikoUIElement,text} from "ziko";
+export default function ZikoUI({ui = text("Hello from zikojs")}){
     const containerRef = useRef(null);
     useEffect(() => {
         if (containerRef.current && ui && ui instanceof ZikoUIElement) {
