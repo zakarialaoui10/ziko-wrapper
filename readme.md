@@ -1,6 +1,6 @@
 # Overview
 
-**Ziko.js** is a lightweight UI library designed for dynamic client-side rendering. To make Ziko.js more versatile, we’ve implemented a wrapper that integrates it with various popular frontend frameworks, including React, Svelte, Preact, Vue, and Astro. This allows developers to leverage Ziko.js’s dynamic elements while maintaining the conventions and features of their chosen framework.
+ [**Ziko.js**]() is a lightweight UI library designed for dynamic client-side rendering. To make Ziko.js more versatile, we’ve implemented a wrapper that integrates it with various popular frontend frameworks, including React, Svelte, Preact, Vue, and Astro. This allows developers to leverage Ziko.js’s dynamic elements while maintaining the conventions and features of their chosen framework.
 
 # Install
 ```shell
