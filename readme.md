@@ -10,11 +10,11 @@
 # Integration Approaches 
 There are two primary ways to integrate Ziko.js with these frameworks:
 
-## Component-Based Frameworks: 
-For frameworks like React, Svelte, Vue, and Preact, we use specific wrapper components that allow you to directly integrate Ziko.js elements into your components. These wrappers handle the lifecycle and hydration of Ziko.js components, ensuring seamless interaction with the framework’s rendering engine.
+## SPA Based Frameworks: 
+For single-page application (SPA) frameworks like React, Svelte, Vue, and Preact, there is a specific wrapper components that allow you to integrate Ziko.js elements directly within your components. These wrappers manage the initialization and lifecycle of Ziko.js elements, ensuring that they work seamlessly with the framework’s rendering engine. This integration allows Ziko.js elements to respond to framework-specific state changes and interactions, while also enabling framework components to react to events and updates from Ziko.js elements.
 
 ## SSR/SSG Frameworks: 
-For frameworks like Astro, which utilize server-side rendering (SSR) and static site generation (SSG), we employ a different approach. Here, we use the useZiko helper to initialize and manage Ziko.js components. This approach leverages client-side hydration to dynamically render Ziko.js elements after the static HTML has been generated.
+For frameworks like Astro, Next, Nuxt.. which utilize server-side rendering (SSR) and static site generation (SSG), we employ a different approach. Here, we use the useZiko helper to initialize and manage Ziko.js components. This approach leverages client-side hydration to dynamically render Ziko.js elements after the static HTML has been generated.
 
 In this guide, we'll demonstrate how to use Ziko.js with:
 
