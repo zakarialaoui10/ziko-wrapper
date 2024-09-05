@@ -20,7 +20,8 @@
     "preact",
     "next",
     "nuxt",
-    "svelteKit"
+    "svelteKit",
+    "astro"
   ],
   "author": "zakaria elalaoui",
   "license": "MIT",

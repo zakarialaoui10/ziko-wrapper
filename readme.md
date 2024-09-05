@@ -18,13 +18,14 @@ For frameworks like Astro, Next, Nuxt.. which utilize server-side rendering (SSR
 
 In this guide, we'll demonstrate how to use Ziko.js with:
 
-|Framework|Approach|
-|-|-|
+|Framework|Approach|Remark|
+|-|-|-|
 |`React`|Using the ***`ZikoUI`*** component|
+|`Next`|Using the ***`ZikoUI`*** component|Requires the `use client` directive|
 |`Svelte`|Using the ***`ZikoUI`*** component|
 |`Vue`|Using the ***`ZikoUI`*** component|
 |`Preact`|Using the ***`ZikoUI`*** component|
-|`Astro`|Using the ***`useZiko`*** helper for client-side hydration|
+|`Astro`|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
 |`Angular`|Not Supported Yet|
 |`Solid`|Not Supported Yet|
 |`Lit`|Not Supported Yet|
@@ -55,6 +56,29 @@ Integration with these frameworks allows for seamless, bidirectional communicati
     </main>
   )}
   ```
+## Next Integration : 
+**Next.js**, by default, uses server-side rendering (SSR), which can be problematic for libraries like zikojs that depend on browser APIs. To ensure proper integration of zikojs with Next.js, you must use the "use client" directive. This directive forces Next.js to render the component only on the client side, bypassing SSR where it would otherwise fail.
+
+Here's how you can integrate zikojs with Next.js:
+
+Client-Side Rendering with "use client": Next.js pages are rendered server-side by default, so it's necessary to mark the components that use browser-specific libraries, like zikojs, to render only on the client.
+
+**Example :**
+```js
+"use client"; 
+import { text } from "ziko";
+import ZikoUI from "ziko-wrapper/react";
+const ui = text("hello world").style({
+  color: "green",
+});
+export default function ZikoClientComponent() {
+  return (
+      <ZikoUI ui={ui} />
+  );
+}
+
+```
+
 ## Vue Integration :
 
 **Vue** uses a reactive data model and a virtual DOM for client-side rendering. The Ziko.js wrapper for Vue allows you to integrate Ziko.js elemnts into your Vue application efficiently.
@@ -89,6 +113,38 @@ const ui = text("hello world").style({
 
 ```
 ## Preact Integration
+To integrate zikojs with **Preact**, you can use the ziko-wrapper package to seamlessly wrap ziko elements inside Preact components. Below is an example of how to create a simple component with zikojs, where a text element is styled and rendered using the Preact wrapper.
+
+The ZikoUI component takes the ziko element as a prop, allowing you to manage it in a Preact-friendly way.
+
+Here's how you can set up the integration :
+
+```jsx
+import { text } from 'ziko';
+import ZikoUI from 'ziko-wrapper/preact';
+const ui = text('hello world').style({
+  color: 'green',
+});
+export default function App() {
+  return <ZikoUI ui={ui} />;
+}
+```
+To wrap a zikojs element inside a Preact component and then use this component within an Astro component, you need to enable compatibility mode by setting `compat` to `true` in your Astro configuration:
+```js
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import preact from '@astrojs/preact'
+/* Other Imports */
+export default defineConfig({
+  /* ... Config */
+  integrations: [
+    preact({
+      compat : true // Enable Preact compatibility mode
+    })
+    /* Other Integrations */
+    ],
+})
+```
 
 ## Astro Integration
 
