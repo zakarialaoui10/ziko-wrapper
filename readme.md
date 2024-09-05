@@ -20,18 +20,22 @@ In this guide, we'll demonstrate how to use Ziko.js with:
 
 |Framework|Approach|
 |-|-|
-|React|Using the ***`ZikoUI`*** component|
-|Svelte|Using the ***`ZikoUI`*** component|
-|Vue|Using the ***`ZikoUI`*** component|
-|Preact|Using the ***`ZikoUI`*** component|
-|Astro|Using the ***`useZiko`*** helper for client-side hydration|
+|`React`|Using the ***`ZikoUI`*** component|
+|`Svelte`|Using the ***`ZikoUI`*** component|
+|`Vue`|Using the ***`ZikoUI`*** component|
+|`Preact`|Using the ***`ZikoUI`*** component|
+|`Astro`|Using the ***`useZiko`*** helper for client-side hydration|
+|`Angular`|Not Supported Yet|
+|`Solid`|Not Supported Yet|
+|`Lit`|Not Supported Yet|
+|`Stencil`|Not Supported Yet|
+|`Qwik`|Not Supported Yet|
 
 # Communication Between Ziko.js Elements and Frameworks
-Integration with these frameworks allows for seamless, bidirectional communication:
+Integration with these frameworks allows for seamless, bidirectional communication :
+ - Ziko.js to Framework: Ziko.js elements can receive data and configuration from the framework components, allowing them to adapt based on properties or attributes set by the framework.
 
-Ziko.js to Framework: Ziko.js elements can receive data and configuration from the framework, allowing them to adapt based on properties or attributes set by the framework.
-
-Framework to Ziko.js: Framework elements can be influenced by Ziko.js components through event handlers or state updates, ensuring that interactions and changes in the framework’s components are reflected in the Ziko.js elements.
+ - Framework to Ziko.js: Framework Components can be influenced by Ziko.js elemnts through event handlers or state updates, ensuring that interactions and changes in the framework’s components are reflected in the Ziko.js elements.
 
 # Usage
 ## React Integration
@@ -84,6 +88,8 @@ const ui = text("hello world").style({
 </main>
 
 ```
+## Preact Integration
+
 ## Astro Integration
 
 **Astro** combines static site generation (SSG) with client-side functionality. By default, Astro generates static HTML files and uses hydration directives like `client:load` for dynamic rendering.
@@ -111,4 +117,4 @@ import ZikoComponent from "./ZikoComponent.js"
 
 ## Lit 
 ## Solid 
-## Preact 
+
