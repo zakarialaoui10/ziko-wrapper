@@ -1,23 +1,23 @@
 import { createEffect, onCleanup, createSignal } from 'solid-js';
-
+import { ZikoUIElement } from 'ziko';
 function ZikoUI(props) {
   let containerRef;
-  const [ui, setUI] = createSignal(props.ui);
+  const [ui,_] = createSignal(props.ui);
 
   createEffect(() => {
+    console.log(ui());
     if (containerRef && ui() instanceof ZikoUIElement) {
-      containerRef.innerHTML = "";
+      ui().unrender();
+      containerRef.innerHTML = '';
       containerRef.appendChild(ui().element);
     }
   });
 
   onCleanup(() => {
-    // Cleanup logic if needed
+
   });
 
-  return (
-    <ziko-ui ref={containerRef} data-engine="ziko"></ziko-ui>
-  );
+  return <div ref={containerRef} data-engine="zikojs"></div>;
 }
 
 export default ZikoUI;

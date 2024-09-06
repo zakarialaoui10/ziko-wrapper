@@ -195,7 +195,17 @@ import ZikoComponent from "./ZikoComponent.js"
 <div data-engine="ziko.js"></div>
 <ZikoComponent client:load text2={" Hello World !"}/>
 ```
-
-## Lit 
 ## Solid 
+```jsx
+import ZikoUI from 'ziko-wrapper/solid';
+import Ziko, { text } from 'ziko';
+let ui = text('Hello Solid from Zikojs').style({ 
+  color: 'red'
+   });
+export default function App() {
+  return <ZikoUI ui={ui} />;
+}
+```
+## Lit 
+
 
