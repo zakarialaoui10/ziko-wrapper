@@ -37,11 +37,11 @@ In this guide, we'll demonstrate how to use Ziko.js with:
 
 |Framework|Approach|Remark|
 |-|-|-|
-|[React](#react-integration)|Using the ***`ZikoUI`*** component|
+|[React](#react-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
 |[Next](#next-integration)|Using the ***`ZikoUI`*** component|Requires the `use client` directive|
-|[Svelte](#svelte-integration)|Using the ***`ZikoUI`*** component|
-|[Vue](#vue-integration)|Using the ***`ZikoUI`*** component|
-|[Preact](#preact-integration)|Using the ***`ZikoUI`*** component|
+|[Svelte](#svelte-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
+|[Vue](#vue-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
+|[Preact](#preact-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
 |[Astro](#astro-integration)|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
 |[Angular](#angular-integration)|Not Supported Yet|
 |[Solid](#solid-integration)|Not Supported Yet|
@@ -49,6 +49,14 @@ In this guide, we'll demonstrate how to use Ziko.js with:
 |[Stencil](#stencil-integration)|Not Supported Yet|
 |[Qwik](#qwik-integration)|Not Supported Yet|
 |[Quasar](#quasar-integration)|Not Supported Yet|
+|[Meteor](#meteor-integration)|Not Supported Yet|
+|[Ember](#ember-integration)|Not Supported Yet|
+|[Polymer](#polymer-integration)|Not Supported Yet|
+|[Backbone](#backbone-integration)|Not Supported Yet|
+|[Whatsup](#whatsup-integration)|Not Supported Yet|
+|[Seule](#seule-integration)|Not Supported Yet|
+|[Inferno](#inferno-integration)|Not Supported Yet|
+
 # Communication Between Ziko.js Elements and Frameworks
 Integration with these frameworks allows for seamless, bidirectional communication :
  - Ziko.js to Framework: Ziko.js elements can receive data and configuration from the framework components, allowing them to adapt based on properties or attributes set by the framework.
