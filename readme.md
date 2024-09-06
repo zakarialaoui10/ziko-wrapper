@@ -7,6 +7,23 @@
  npm install ziko-wrapper
 ```
 
+<!-- # Content 
+ - [Integration](#integration)
+   - [React](#react-integration)
+   - [Next](#next-integration)
+   - [Vue](#vue-integration)
+   - [Nuxt](#nuxt-integration)
+   - [Svelte](#svelte-integration)
+   - [Preact](#preact-integration)
+   - [Astro](#astro-integration)
+   - [Angluar](#angular-integration)
+   - [Qwik](#qwik-integration)
+   - [Quasar](#quasar-integration)
+   - [Lit](#lit-integration)
+   - [Solid](#solid-integration)
+   - [Stencil](#stencil-integration)
+   - [Ember](#ember-integration) -->
+
 # Integration Approaches 
 There are two primary ways to integrate Ziko.js with these frameworks:
 
@@ -20,25 +37,25 @@ In this guide, we'll demonstrate how to use Ziko.js with:
 
 |Framework|Approach|Remark|
 |-|-|-|
-|`React`|Using the ***`ZikoUI`*** component|
-|`Next`|Using the ***`ZikoUI`*** component|Requires the `use client` directive|
-|`Svelte`|Using the ***`ZikoUI`*** component|
-|`Vue`|Using the ***`ZikoUI`*** component|
-|`Preact`|Using the ***`ZikoUI`*** component|
-|`Astro`|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
-|`Angular`|Not Supported Yet|
-|`Solid`|Not Supported Yet|
-|`Lit`|Not Supported Yet|
-|`Stencil`|Not Supported Yet|
-|`Qwik`|Not Supported Yet|
-
+|[React](#react-integration)|Using the ***`ZikoUI`*** component|
+|[Next](#next-integration)|Using the ***`ZikoUI`*** component|Requires the `use client` directive|
+|[Svelte](#svelte-integration)|Using the ***`ZikoUI`*** component|
+|[Vue](#vue-integration)|Using the ***`ZikoUI`*** component|
+|[Preact](#preact-integration)|Using the ***`ZikoUI`*** component|
+|[Astro](#astro-integration)|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
+|[Angular](#angular-integration)|Not Supported Yet|
+|[Solid](#solid-integration)|Not Supported Yet|
+|[Lit](#lit-integration)|Not Supported Yet|
+|[Stencil](#stencil-integration)|Not Supported Yet|
+|[Qwik](#qwik-integration)|Not Supported Yet|
+|[Quasar](#quasar-integration)|Not Supported Yet|
 # Communication Between Ziko.js Elements and Frameworks
 Integration with these frameworks allows for seamless, bidirectional communication :
  - Ziko.js to Framework: Ziko.js elements can receive data and configuration from the framework components, allowing them to adapt based on properties or attributes set by the framework.
 
  - Framework to Ziko.js: Framework Components can be influenced by Ziko.js elemnts through event handlers or state updates, ensuring that interactions and changes in the framework’s components are reflected in the Ziko.js elements.
 
-# Usage
+# Integration
 ## React Integration
 
 **React** uses a virtual DOM and client-side rendering. The Ziko.js wrapper for React integrates Ziko.js elements by utilizing React's component lifecycle.
