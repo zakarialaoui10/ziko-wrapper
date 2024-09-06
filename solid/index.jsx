@@ -3,9 +3,7 @@ import { ZikoUIElement } from 'ziko';
 function ZikoUI(props) {
   let containerRef;
   const [ui,_] = createSignal(props.ui);
-
   createEffect(() => {
-    console.log(ui());
     if (containerRef && ui() instanceof ZikoUIElement) {
       ui().unrender();
       containerRef.innerHTML = '';
