@@ -1,7 +1,10 @@
-import { JSX } from 'preact';
-import { ZikoUIElement } from 'ziko';
-interface ZikoUIProps {
-  ui?: ZikoUIElement;
+import { ComponentChildren } from "preact";
+import { RefObject } from "preact/hooks";
+
+interface WrapperProps {
+    children?: ComponentChildren;
 }
-declare function ZikoUI(props: ZikoUIProps): JSX.Element;
-export default ZikoUI;
+
+export default function Wrapper({ children }: WrapperProps): JSX.Element;
+
+export declare const containerRef: RefObject<HTMLDivElement>;

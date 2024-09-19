@@ -22,7 +22,8 @@
    - [Lit](#lit-integration)
    - [Solid](#solid-integration)
    - [Stencil](#stencil-integration)
-   - [Ember](#ember-integration) -->
+   - [Ember](#ember-integration) 
+   -->
 
 # Integration Approaches 
 There are two primary ways to integrate Ziko.js with these frameworks:
@@ -37,25 +38,13 @@ In this guide, we'll demonstrate how to use Ziko.js with:
 
 |Framework|Approach|Remark|
 |-|-|-|
-|[React](#react-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
-|[Next](#next-integration)|Using the ***`ZikoUI`*** component|Requires the `use client` directive|
-|[Svelte](#svelte-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
-|[Vue](#vue-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
-|[Preact](#preact-integration)|Using the ***`ZikoUI`*** component|---------------------------------------|
-|[Astro](#astro-integration)|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
-|[Angular](#angular-integration)|Not Supported Yet|
+|[React](#react-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
 |[Solid](#solid-integration)|Not Supported Yet|
-|[Lit](#lit-integration)|Not Supported Yet|
-|[Stencil](#stencil-integration)|Not Supported Yet|
-|[Qwik](#qwik-integration)|Not Supported Yet|
-|[Quasar](#quasar-integration)|Not Supported Yet|
-|[Meteor](#meteor-integration)|Not Supported Yet|
-|[Ember](#ember-integration)|Not Supported Yet|
-|[Polymer](#polymer-integration)|Not Supported Yet|
-|[Backbone](#backbone-integration)|Not Supported Yet|
-|[Whatsup](#whatsup-integration)|Not Supported Yet|
-|[Seule](#seule-integration)|Not Supported Yet|
-|[Inferno](#inferno-integration)|Not Supported Yet|
+|[Next](#next-integration)|Using the ***`ZikoWrapper`*** component|Requires the `use client` directive|
+|[Svelte](#svelte-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
+|[Vue](#vue-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
+|[Preact](#preact-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
+|[Astro](#astro-integration)|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
 
 # Communication Between Ziko.js Elements and Frameworks
 Integration with these frameworks allows for seamless, bidirectional communication :
@@ -69,17 +58,16 @@ Integration with these frameworks allows for seamless, bidirectional communicati
 **React** uses a virtual DOM and client-side rendering. The Ziko.js wrapper for React integrates Ziko.js elements by utilizing React's component lifecycle.
 
   ```jsx
-  import {text} from "ziko";
-  import ZikoUI from "ziko-wrapper/react"
-   const ui = text("hello world").style({
-    color:"green"
-    })
-  export default function App() {
+import ZikoWrapper from 'ziko-wrapper/react';
+import { Collapsible } from 'ziko';
+let FAQ=({qst,res})=>Collapsible(qst, res);
+export default function App() {
   return (
-    <main>
-      <ZikoUI ui={ui} />
-    </main>
-  )}
+    <ZikoWrapper>
+      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
+    </ZikoWrapper>
+  )
+}
   ```
 ## Next Integration : 
 **Next.js**, by default, uses server-side rendering (SSR), which can be problematic for libraries like zikojs that depend on browser APIs. To ensure proper integration of zikojs with Next.js, you must use the "use client" directive. This directive forces Next.js to render the component only on the client side, bypassing SSR where it would otherwise fail.
@@ -91,15 +79,15 @@ Client-Side Rendering with "use client": Next.js pages are rendered server-side 
 **Example :**
 ```js
 "use client"; 
-import { text } from "ziko";
-import ZikoUI from "ziko-wrapper/react";
-const ui = text("hello world").style({
-  color: "green",
-});
-export default function ZikoClientComponent() {
+import ZikoWrapper from 'ziko-wrapper/react';
+import { Collapsible } from 'ziko';
+let FAQ=({qst,res})=>Collapsible(qst, res);
+export default function App() {
   return (
-      <ZikoUI ui={ui} />
-  );
+    <ZikoWrapper>
+      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
+    </ZikoWrapper>
+  )
 }
 
 ```
@@ -119,8 +107,7 @@ const ui = text("hello world").style({
   <ZikoUI :ui="ui" />
 </template>
   ```
-## Angular 
- Not Implemented yet
+  
 ## Svelte
 **Svelte** compiles components into highly optimized JavaScript, which ensures efficient client-side performance. The Ziko.js wrapper for Svelte leverages Svelte’s lifecycle functions to initialize and render Ziko.js components effectively.
 
@@ -145,13 +132,15 @@ The ZikoUI component takes the ziko element as a prop, allowing you to manage it
 Here's how you can set up the integration :
 
 ```jsx
-import { text } from 'ziko';
-import ZikoUI from 'ziko-wrapper/preact';
-const ui = text('hello world').style({
-  color: 'green',
-});
+import ZikoWrapper from 'ziko-wrapper/preact';
+import { Collapsible } from 'ziko';
+let FAQ=({qst,res})=>Collapsible(qst, res)
 export default function App() {
-  return <ZikoUI ui={ui} />;
+  return (
+    <ZikoWrapper>
+      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
+    </ZikoWrapper>
+  )
 }
 ```
 To wrap a zikojs element inside a Preact component and then use this component within an Astro component, you need to enable compatibility mode by setting `compat` to `true` in your Astro configuration:
@@ -197,13 +186,15 @@ import ZikoComponent from "./ZikoComponent.js"
 ```
 ## Solid 
 ```jsx
-import ZikoUI from 'ziko-wrapper/solid';
-import Ziko, { text } from 'ziko';
-let ui = text('Hello Solid from Zikojs').style({ 
-  color: 'red'
-   });
+import ZikoWrapper from 'ziko-wrapper/solid';
+import { Collapsible } from 'ziko';
+let FAQ=({qst,res})=>Collapsible(qst, res)
 export default function App() {
-  return <ZikoUI ui={ui} />;
+  return (
+    <ZikoWrapper>
+      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
+    </ZikoWrapper>
+  )
 }
 ```
 ## Lit 
