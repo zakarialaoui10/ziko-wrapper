@@ -1,4 +1,4 @@
-import ZikoWrapper from "./ziko-wrapper/index.jsx";
+import ZikoWrapper from "./ziko-wrapper/index.js";
 import {
   StyleSheet,
   ScrollView,
