@@ -9,23 +9,6 @@
     "type": "git",
     "url": "git+https://github.com/zakarialaoui10/ziko-wrapper.git"
   },
-  "exports": {
-    "./react": {
-      "import": "./src/js/react/index.jsx"
-    },
-    "./preact": {
-      "import": "./src/js/preact/index.jsx"
-    },
-    "./solid": {
-      "import": "./src/js/solid/index.jsx"
-    },
-    "./svelte": {
-      "import": "./src/js/svelte/ZikoWrapper.svelte"
-    },
-    "./vue": {
-      "import": "./src/js/vue/ZikoWrapper.vue"
-    }
-  },
   "keywords": [
     "ziko",
     "react",

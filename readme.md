@@ -1,202 +1,105 @@
 # Overview
 
-[**Ziko.js**](https://github.com/zakarialaoui10/ziko.js) is a lightweight UI library designed for dynamic client-side rendering. To make Ziko.js more versatile, I have implemented a wrapper that integrates it with various popular frontend frameworks, including React, Svelte, Preact, Vue, and Astro. This allows developers to leverage Ziko.js’s dynamic elements while maintaining the conventions and features of their chosen framework.
+[**Ziko.js**](https://github.com/zakarialaoui10/ziko.js) is a lightweight UI library focused on dynamic client-side rendering. 
+To extend its compatibility, **Ziko-wrapper** enables seamless integration of Ziko.js with popular frontend frameworks such as React, Svelte, Preact, Vue, and Astro. This allows developers to utilize Ziko.js's dynamic components while preserving the structure and functionality of their preferred framework.k.
 
 # Install
 ```shell
  npm install ziko-wrapper
 ```
 
-<!-- # Content 
- - [Integration](#integration)
-   - [React](#react-integration)
-   - [Next](#next-integration)
-   - [Vue](#vue-integration)
-   - [Nuxt](#nuxt-integration)
-   - [Svelte](#svelte-integration)
-   - [Preact](#preact-integration)
-   - [Astro](#astro-integration)
-   - [Angluar](#angular-integration)
-   - [Qwik](#qwik-integration)
-   - [Quasar](#quasar-integration)
-   - [Lit](#lit-integration)
-   - [Solid](#solid-integration)
-   - [Stencil](#stencil-integration)
-   - [Ember](#ember-integration) 
-   -->
-
 # Integration Approaches 
-There are two primary ways to integrate Ziko.js with these frameworks:
+## SPA Frameworks/Libraries
+### JSX-Based
 
-## SPA Based Frameworks: 
-For single-page application (SPA) frameworks like React, Svelte, Vue, and Preact, there is a specific wrapper components that allow you to integrate Ziko.js elements directly within your components. These wrappers manage the initialization and lifecycle of Ziko.js elements, ensuring that they work seamlessly with the framework’s rendering engine. This integration allows Ziko.js elements to respond to framework-specific state changes and interactions, while also enabling framework components to react to events and updates from Ziko.js elements.
+ For JSX-based libraries such as React, Preact and Solid, Ziko-wrapper provides a seamless way to integrate Ziko.js components directly into your JSX code. This allows you to define Ziko.js components within your React app and render them dynamically using familiar JSX syntax.
 
-## SSR/SSG Frameworks: 
-For frameworks like Astro which utilize server-side rendering (SSR) and static site generation (SSG), There is a different approach. You have to use the useZiko helper to initialize and manage Ziko.js components. This approach leverages client-side hydration to dynamically render Ziko.js elements after the static HTML has been generated.
+ #### Example : 
 
-In this guide, we'll demonstrate how to use Ziko.js with:
+ ```jsx
+ import ZikoWrapper from 'ziko-wrapper/react'; // For React
+//  import ZikoWrapper from 'ziko-wrapper/preact'; // For Preact
+//  import ZikoWrapper from 'ziko-wrapper/solid'; // For Solid
+ import { Collapsible } from 'ziko';
 
-|Framework|Approach|Remark|
-|-|-|-|
-|[React](#react-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
-|[Solid](#solid-integration)|Not Supported Yet|
-|[Next](#next-integration)|Using the ***`ZikoWrapper`*** component|Requires the `use client` directive|
-|[Svelte](#svelte-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
-|[Vue](#vue-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
-|[Preact](#preact-integration)|Using the ***`ZikoWrapper`*** component|---------------------------------------|
-|[Astro](#astro-integration)|Using the ***`useZiko`*** helper for client-side hydration|Requires the `client:load` directive|
-
-# Communication Between Ziko.js Elements and Frameworks
-Integration with these frameworks allows for seamless, bidirectional communication :
- - Ziko.js to Framework: Ziko.js elements can receive data and configuration from the framework components, allowing them to adapt based on properties or attributes set by the framework.
-
- - Framework to Ziko.js: Framework Components can be influenced by Ziko.js elemnts through event handlers or state updates, ensuring that interactions and changes in the framework’s components are reflected in the Ziko.js elements.
-
-# Integration
-## React Integration
-
-**React** uses a virtual DOM and client-side rendering. The Ziko.js wrapper for React integrates Ziko.js elements by utilizing React's component lifecycle.
-
-  ```jsx
-import ZikoWrapper from 'ziko-wrapper/react';
-import { Collapsible } from 'ziko';
-let FAQ=({qst,res})=>Collapsible(qst, res);
-export default function App() {
+ let FAQ = ({ qst, res }) => Collapsible(qst, res);
+ export default function App() {
   return (
     <ZikoWrapper>
-      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
+      <FAQ qst="What is zikojs?" res="Zikojs is a javascript library with a focus on making coding effortless." />
     </ZikoWrapper>
-  )
-}
-  ```
-## Next Integration : 
-**Next.js**, by default, uses server-side rendering (SSR), which can be problematic for libraries like zikojs that depend on browser APIs. To ensure proper integration of zikojs with Next.js, you must use the "use client" directive. This directive forces Next.js to render the component only on the client side, bypassing SSR where it would otherwise fail.
-
-Here's how you can integrate zikojs with Next.js:
-
-Client-Side Rendering with "use client": Next.js pages are rendered server-side by default, so it's necessary to mark the components that use browser-specific libraries, like zikojs, to render only on the client.
-
-**Example :**
-```js
-"use client"; 
-import ZikoWrapper from 'ziko-wrapper/react';
-import { Collapsible } from 'ziko';
-let FAQ=({qst,res})=>Collapsible(qst, res);
-export default function App() {
-  return (
-    <ZikoWrapper>
-      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
-    </ZikoWrapper>
-  )
+  );
 }
 
-```
+ ```
+ ### Template-Based Framework/libraries
 
-## Vue Integration :
+ For template-based frameworks like Svelte, Vue, and Astro, Ziko-wrapper makes it easy to integrate Ziko.js's dynamic UI components within your framework’s declarative syntax. You can create Ziko.js UI elements and bind them to your template for seamless integration.
 
-**Vue** uses a reactive data model and a virtual DOM for client-side rendering. The Ziko.js wrapper for Vue allows you to integrate Ziko.js elemnts into your Vue application efficiently.
+ #### Example
+
+ ##### Svelte 
  ```html
-<script setup>
-import { text } from "ziko";
-import ZikoUI from "ziko-wrapper/vue";
-const ui = text("hello world").style({
-  color: "green",
-});
-</script>
-<template>
-  <ZikoUI :ui="ui" />
-</template>
-  ```
+ <script>
+  import ZikoWrapper from "ziko-wrapper/svelte/ZikoWrapper.svelte";
+  import { text } from "ziko";
   
-## Svelte
-**Svelte** compiles components into highly optimized JavaScript, which ensures efficient client-side performance. The Ziko.js wrapper for Svelte leverages Svelte’s lifecycle functions to initialize and render Ziko.js components effectively.
-
-```html
-<script>
-import ZikoUI from "ziko-wrapper/svelte/ZikoUI.svelte";
-import { text } from "ziko";
-const ui = text("hello world").style({
-  color: "green",
-});
+  const ui = () => text("hello world").style({
+    color: "green",
+  });
 </script>
-<main>
- <ZikoUI ui={ui}/>
-</main>
 
-```
-## Preact Integration
-To integrate zikojs with **Preact**, you can use the ziko-wrapper package to seamlessly wrap ziko elements inside Preact components. Below is an example of how to create a simple component with zikojs, where a text element is styled and rendered using the Preact wrapper.
+<ZikoWrapper ui={ui()} />
+ ```
+ ##### Vue
+ ```html
+ <script setup>
+ import { text } from "ziko";
+ import ZikoUI from "ziko-wrapper/vue";
+ const ui=()=>text("hello world").style({
+    color: "green",
+    });
+ </script>
+<template>
+ <ZikoUI :ui="ui()" />
+</template>
+ ```
 
-The ZikoUI component takes the ziko element as a prop, allowing you to manage it in a Preact-friendly way.
+## SSR Frameworks 
+### Next 
 
-Here's how you can set up the integration :
+### Astro 
+In Astro, you can enable client-side hydration for Ziko.js components using the React, Preact, or Solid wrappers. This allows for optimized loading and interactive features in your Astro applications.
 
+#### Example using preact : 
+- Declaration : 
 ```jsx
+// Component.jsx
+import { text } from 'ziko';
 import ZikoWrapper from 'ziko-wrapper/preact';
-import { Collapsible } from 'ziko';
-let FAQ=({qst,res})=>Collapsible(qst, res)
+const Text=(txt = 'hello world')=> text(txt).style({
+  color: 'green',
+});
 export default function App() {
   return (
     <ZikoWrapper>
-      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
+      <Text />
+      <Text />
     </ZikoWrapper>
-  )
+  );
 }
 ```
-To wrap a zikojs element inside a Preact component and then use this component within an Astro component, you need to enable compatibility mode by setting `compat` to `true` in your Astro configuration:
-```js
-// astro.config.mjs
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact'
-/* Other Imports */
-export default defineConfig({
-  /* ... Config */
-  integrations: [
-    preact({
-      compat : true // Enable Preact compatibility mode
-    })
-    /* Other Integrations */
-    ],
-})
-```
-
-## Astro Integration
-
-**Astro** combines static site generation (SSG) with client-side functionality. By default, Astro generates static HTML files and uses hydration directives like `client:load` for dynamic rendering.
-
-- **Step 1 :** Declare a Ziko.js Element using the `useZiko` helper :
-```js
-// ZikoComponent.js
-import { useZiko } from "ziko-wrapper/astro";
-import { text } from "ziko"
-export default function UI({text1 = "Hello from zikojs"}){
-    useZiko(
-        text(text1),
-    )
-}
-```
-- **Step 2 :** Wrap the Ziko.js element into an Astro component using the `client:load` directive to hydrate it on the client side.
+- Integration : 
 ```jsx
 ---
-// ZikoComponent.astro
-import ZikoComponent from "./ZikoComponent.js"
+import Component from "./Component/jsx"
 ---
-<div data-engine="ziko.js"></div>
-<ZikoComponent client:load text2={" Hello World !"}/>
+<Component client:load/>
 ```
-## Solid 
-```jsx
-import ZikoWrapper from 'ziko-wrapper/solid';
-import { Collapsible } from 'ziko';
-let FAQ=({qst,res})=>Collapsible(qst, res)
-export default function App() {
-  return (
-    <ZikoWrapper>
-      <FAQ qts="What is zikojs ?" res = "Zikojs is a javascript library with a focus on making coding effortless ."/>
-    </ZikoWrapper>
-  )
-}
-```
-## Lit 
+## Minimal Frameworks 
+<!-- Alpine -->
 
+## Mobile Framworks 
+
+### React Native
 
