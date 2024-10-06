@@ -1,4 +1,3 @@
-import {VFile} from "vfile"
 function transformCode(inputCode) {
     const wrapperDiv = '<div id="ziko-wrapper"></div>\n\n<script>';
     const functionNameMatch = inputCode.match(
