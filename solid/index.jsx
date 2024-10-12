@@ -17,7 +17,9 @@ function Wrapper(props) {
     <div
       data-engine="ziko.js"
       ref={(el) =>
-        el && props.children && el.appendChild(props.children().element)
+        globalThis.addEventListener("DOMContentLoaded",()=>{
+          el && props.children && el.appendChild(props.children().element)
+        })
       }
     ></div>
   );
