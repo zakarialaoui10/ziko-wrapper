@@ -1,10 +1,8 @@
 import { ComponentChildren } from "preact";
-import { RefObject } from "preact/hooks";
 
 interface WrapperProps {
-    children?: ComponentChildren;
+    children?: ComponentChildren; // Allows passing multiple children or a single child
 }
 
+// Wrapper component definition
 export default function Wrapper({ children }: WrapperProps): JSX.Element;
-
-export declare const containerRef: RefObject<HTMLDivElement>;
