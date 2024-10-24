@@ -1,7 +1,8 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "integrate zikojs elements within other framework like vue react ..",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +22,10 @@
     "next",
     "nuxt",
     "svelteKit",
-    "astro"
+    "astro",
+    "front-end",
+    "framework",
+    "mobile"
   ],
   "author": "zakaria elalaoui",
   "license": "MIT",
