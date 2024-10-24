@@ -1,15 +1,16 @@
-export default function (element) {
-    return (Component, props, { default: children, ...slotted }, { client }) => {
-        if (!element.hasAttribute("ssr"))
+export default function (wrapper) {
+    return (Component, props, { default: children, ...slotted }, {client}) => {
+        if (!wrapper.hasAttribute("ssr"))
             return;
-        element.setAttribute("data-engine","ziko.js")
+        wrapper.setAttribute("data-engine","ziko.js")
         const properties = props ?? {};
         if (client !== "only") {
             console.log("! Only ")
+            Component(properties).render(wrapper)
         }
         else {
-            console.log("Add")
-            Component(properties).render(element)
+            console.log("Only ")
+            Component(properties).render(wrapper)
         }
     };
 }
