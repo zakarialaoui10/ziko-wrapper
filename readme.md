@@ -91,7 +91,7 @@ export default ({msg, color})=>{
   return h1(msg).style({color})
 }
 ```
-### Component Integration : 
+#### Component Integration : 
 
 ```jsx
 ---
