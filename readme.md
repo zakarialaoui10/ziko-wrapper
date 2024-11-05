@@ -69,33 +69,40 @@ To extend its compatibility, **Ziko-wrapper** enables seamless integration of Zi
 ### Next 
 
 ### Astro 
-In Astro, you can enable client-side hydration for Ziko.js components using the React, Preact, or Solid wrappers. This allows for optimized loading and interactive features in your Astro applications.
 
-#### Example using preact : 
-- Declaration : 
-```jsx
-// Component.jsx
-import { text } from 'ziko';
-import ZikoWrapper from 'ziko-wrapper/preact';
-const Text=(txt = 'hello world')=> text(txt).style({
-  color: 'green',
+#### Plugin setup 
+```js
+import { defineConfig } from 'astro/config';
+import ziko from "ziko-wrapper/astro"
+export default defineConfig({
+    integrations : [
+        ziko()
+    ],
 });
-export default function App() {
-  return (
-    <ZikoWrapper>
-      <Text />
-      <Text />
-    </ZikoWrapper>
-  );
+```
+
+#### Component Declaration 
+```js
+// Component.js
+import {h1} from "ziko"
+export default ({msg, color})=>{
+  return h1(msg).style({color})
 }
 ```
-- Integration : 
+### Component Integration : 
+
 ```jsx
 ---
-import Component from "./Component/jsx"
+ import Component from "./component.js"
 ---
-<Component client:load/>
+<Component 
+  msg = "hello world from zikojs"
+  color = "coral"
+  client:only="ziko" 
+/>
 ```
+
+
 ## Minimal Frameworks 
 <!-- Alpine -->
 
