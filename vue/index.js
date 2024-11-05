@@ -1,1 +1,1 @@
-export { default as ZikoWrapper } from './ZikoWrapper.vue';
+export { default as ZikoWrapper } from './ziko-wrapper.vue';

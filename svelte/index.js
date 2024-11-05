@@ -1,1 +1,1 @@
-export { default as ZikoWrapper } from './ZikoWrapper.svelte';
+export { default as ZikoWrapper } from './ziko-wrapper.svelte';

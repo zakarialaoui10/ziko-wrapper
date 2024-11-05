@@ -8,7 +8,7 @@
 <script>
   export default {
     props: {
-      ui: Object
+      ui: Function
     },
     mounted() {
       if (this.$refs.containerRef && this.ui) {
