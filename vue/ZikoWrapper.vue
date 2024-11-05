@@ -1,5 +1,10 @@
 <template>
-  <section ref="containerRef" data-engine="ziko.js" data-wrapper="ziko-wrapper"></section>
+  <div 
+    ref="containerRef" 
+    data-wrapper="ziko-wrapper"
+    data-engine="ziko.js"
+    style="display: contents;"
+  ></div>
 </template>
 <script>
 import {ZikoUIElement} from "ziko"

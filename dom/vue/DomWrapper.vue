@@ -1,5 +1,9 @@
 <template>
-    <section ref="containerRef" data-wrapper="ziko-wrapper"></section>
+    <div 
+      ref="containerRef" 
+      data-wrapper="ziko-wrapper"
+      style="display: contents;"
+    ></div>
 </template>
 <script>
   export default {
@@ -14,4 +18,3 @@
     }
   };
 </script>
-  

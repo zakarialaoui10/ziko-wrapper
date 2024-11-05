@@ -1,4 +1,8 @@
-<section bind:this={containerRef} data-wrapper="ziko-wrapper"></section>
+<div 
+  bind:this={containerRef} 
+  data-wrapper="ziko-wrapper"
+  style="display: contents;"
+></div>
 
 <script>
   import { onMount } from 'svelte';

@@ -1,5 +1,9 @@
-<div bind:this={containerRef} data-engine="ziko" data-wrapper="ziko-wrapper"></div>
-
+<div 
+  bind:this={containerRef} 
+  data-wrapper="ziko-wrapper"
+  data-engine="ziko.js"
+  style="display: contents;"
+></div>
 <script>
   import { onMount } from 'svelte';
   import {ZikoUIElement} from "ziko";

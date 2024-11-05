@@ -14,6 +14,10 @@ export function DomWrapper({ children }) {
         }
     }, [children]);
     return (
-        <div data-wrapper="ziko-wrapper" ref={containerRef}></div>
+        <div 
+          data-wrapper="ziko-wrapper" 
+          ref={containerRef}
+          style={{display : "contents"}}
+        ></div>
     );
 }

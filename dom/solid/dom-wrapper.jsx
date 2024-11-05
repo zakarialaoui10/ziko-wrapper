@@ -15,6 +15,7 @@ export function DomWrapper(props) {
   return (
     <div
       data-wrapper="ziko-wrapper"
+      style={{display : "contents"}}
       ref={(el) =>
         globalThis.addEventListener("DOMContentLoaded",()=>{
           el && props.children && el.appendChild(props.children())
