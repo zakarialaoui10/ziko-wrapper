@@ -16,6 +16,7 @@ export function ZikoWrapper(props) {
   return (
     <div
       data-engine="ziko.js"
+      data-wrapper="ziko-wrapper"
       ref={(el) =>
         globalThis.addEventListener("DOMContentLoaded",()=>{
           el && props.children && el.appendChild(props.children().element)

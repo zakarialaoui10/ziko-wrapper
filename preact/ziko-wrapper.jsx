@@ -19,6 +19,6 @@ export function ZikoWrapper({ children }) {
     }, [children]);
 
     return (
-        <div data-engine="ziko.js" ref={containerRef}></div>
+        <div data-wrapper="ziko-wrapper" data-engine="ziko.js" ref={containerRef}></div>
     );
 }

@@ -1,4 +1,4 @@
-<section bind:this={containerRef} data-engine="ziko"></section>
+<div bind:this={containerRef} data-engine="ziko" data-wrapper="ziko-wrapper"></div>
 
 <script>
   import { onMount } from 'svelte';

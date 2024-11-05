@@ -15,5 +15,5 @@ export function ZikoWrapper({ children }) {
       });
     }
   }, [children]);
-  return <div data-engine="ziko.js" ref={containerRef}></div>;
+  return <div data-wrapper="ziko-wrapper" data-engine="ziko.js" ref={containerRef}></div>;
 }
