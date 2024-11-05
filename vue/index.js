@@ -1,0 +1,1 @@
+export { default as ZikoWrapper } from './ZikoWrapper.vue';

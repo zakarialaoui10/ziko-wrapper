@@ -43,7 +43,7 @@ export default function App() {
  ##### Svelte 
  ```html
  <script>
-  import ZikoWrapper from "ziko-wrapper/svelte/ZikoWrapper.svelte";
+  import { ZikoWrapper } from "ziko-wrapper/svelte";
   import { text } from "ziko";
   
   const ui = () => text("hello world").style({
@@ -57,7 +57,7 @@ export default function App() {
  ```html
  <script setup>
  import { text } from "ziko";
- import ZikoWrapper from "ziko-wrapper/vue";
+ import { ZikoWrapper } from "ziko-wrapper/vue";
  const ui=()=>text("hello world").style({
     color: "green",
     });
