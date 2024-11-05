@@ -20,13 +20,15 @@ To extend its compatibility, **Ziko-wrapper** enables seamless integration of Zi
  import ZikoWrapper from 'ziko-wrapper/react'; // For React
 //  import ZikoWrapper from 'ziko-wrapper/preact'; // For Preact
 //  import ZikoWrapper from 'ziko-wrapper/solid'; // For Solid
- import { Collapsible } from 'ziko';
-
- let FAQ = ({ qst, res }) => Collapsible(qst, res);
- export default function App() {
+import { h1 } from 'ziko';
+let Component = ({msg , color}) => h1(msg).style({color})
+export default function App() {
   return (
     <ZikoWrapper>
-      <FAQ qst="What is zikojs?" res="Zikojs is a javascript library with a focus on making coding effortless." />
+      <Component 
+        msg = "Hello from zikojs "
+        color = "coral"
+      />
     </ZikoWrapper>
   );
 }
@@ -55,13 +57,13 @@ To extend its compatibility, **Ziko-wrapper** enables seamless integration of Zi
  ```html
  <script setup>
  import { text } from "ziko";
- import ZikoUI from "ziko-wrapper/vue";
+ import ZikoWrapper from "ziko-wrapper/vue";
  const ui=()=>text("hello world").style({
     color: "green",
     });
  </script>
 <template>
- <ZikoUI :ui="ui()" />
+ <ZikoWrapper :ui="ui()" />
 </template>
  ```
 
