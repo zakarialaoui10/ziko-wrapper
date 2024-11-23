@@ -8,6 +8,12 @@ function SvelteWrapper(Component, props = {}){
         target : ui.element,
         props
     })
+    Object.defineProperty(ui, 'element', {
+        get() {
+          return this.__ele__.firstChild;
+        },
+        configurable: false,
+      });
     return ui 
 }
 export {SvelteWrapper}
