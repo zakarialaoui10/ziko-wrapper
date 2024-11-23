@@ -1,6 +1,6 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "integrate zikojs elements within other framework like vue react ..",
   "type": "module",
   "scripts": {
