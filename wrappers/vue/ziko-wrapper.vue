@@ -15,10 +15,11 @@ export default {
   },
   mounted() {
     __Ziko__.__Config__.setDefault({render:false})
-    if (this.$refs.containerRef && this.ui instanceof ZikoUIElement) {
-      this.$refs.containerRef.innerHTML = "";
-      // this.$refs.containerRef.appendChild(this.ui.clone().element);
-      this.$refs.containerRef.appendChild(this.ui().element);
+    const Wrapper = this.$refs.containerRef
+    if (Wrapper && this.ui instanceof ZikoUIElement) {
+      Wrapper.innerHTML = "";
+      if(this.ui instanceof ZikoUIElement) Wrapper.appendChild(this.ui.element);
+      // else if(this.ui instanceof f) Wrapper.appendChild(this.ui().element);
     }
   }
 };
