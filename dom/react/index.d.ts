@@ -4,4 +4,4 @@ export interface DomWrapperProps {
   children?: ReactNode | ReactNode[];
 }
 
-export function DomWrapper(props: DomWrapperProps): JSX.Element;
+export function DomWrapper({children}: DomWrapperProps): JSX.Element;

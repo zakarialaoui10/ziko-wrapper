@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "preact/hooks";
-export function DomWrapper({ children }) {
+export function DomWrapper({ children /*, dataWrapper = "ziko-wrapper"*/ }) {
     const containerRef = useRef(null);
     useEffect(() => {
         if (containerRef.current) {
@@ -15,7 +15,8 @@ export function DomWrapper({ children }) {
     }, [children]);
     return (
         <div 
-          data-wrapper="ziko-wrapper" 
+          data-wrapper="ziko-wrapper"
+        //   data-wrapper={dataWrapper}
           ref={containerRef}
           style={{display : "contents"}}
         ></div>
