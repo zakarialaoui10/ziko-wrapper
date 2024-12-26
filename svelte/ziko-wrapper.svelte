@@ -4,6 +4,7 @@
   
   let containerRef;
   export let ui;
+  export let test;
   
   __Ziko__.__Config__.setDefault({ render: false });
 
@@ -15,12 +16,14 @@
       } else if (Array.isArray(ui)) {
         ui.forEach(item => containerRef.appendChild(item.element));
       }
+      else console.warn("UI element is not an instance of ZikoUIElement.");
     }
   });
 </script>
 
 <div 
   bind:this={containerRef} 
+  test = {test}
   data-wrapper= "ziko-wrapper" 
   data-engine= "ziko.js"
   style="display: contents;"
