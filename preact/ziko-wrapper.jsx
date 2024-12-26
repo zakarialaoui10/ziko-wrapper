@@ -1,5 +1,5 @@
-import { useRef, useEffect } from "preact/hooks";
 import { render } from "preact"; 
+import { useRef, useEffect } from "preact/hooks";
 
 export function ZikoWrapper({ children }) {
     const containerRef = useRef(null);
