@@ -7,7 +7,7 @@ export function DomWrapper({ children }) {
       if (!(children instanceof Array)) children = [children];
       children.forEach(child => {
         if (typeof child.type === 'function') {
-          const childElement = child.type();
+          const childElement = child.type(child.props);
           if (childElement instanceof HTMLElement) {
             containerRef.current.appendChild(childElement);
           }

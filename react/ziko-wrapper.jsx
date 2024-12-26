@@ -7,7 +7,7 @@ export function ZikoWrapper({ children }) {
       if (!(children instanceof Array)) children = [children];
       children.forEach((child) => {
         if (typeof child.type === 'function') {
-          const childElement = child.type().element;
+          const childElement = child.type(child.props).element;
           if (childElement instanceof HTMLElement) {
             containerRef.current.appendChild(childElement);
           }

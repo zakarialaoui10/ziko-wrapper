@@ -6,12 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "exports":{
-    "./dom/react":"./dom/react/index.js",
-    "./dom/solid":"./dom/solid/index.js",
-    "./dom/svelte":"./dom/svelte/index.js",
-    "./dom/preact":"./dom/preact/index.js",
-    "./dom/vue":"./dom/vue/index.js"
+  "exports": {
+    "./react": "./react/index.js",
+    "./solid": "./solid/index.js",
+    "./svelte": "./svelte/index.js",
+    "./preact": "./preact/index.js",
+    "./vue": "./vue/index.js",
+    "./dom/react": "./dom/react/index.js",
+    "./dom/solid": "./dom/solid/index.js",
+    "./dom/svelte": "./dom/svelte/index.js",
+    "./dom/preact": "./dom/preact/index.js",
+    "./dom/vue": "./dom/vue/index.js"
   },
   "repository": {
     "type": "git",
@@ -41,6 +46,6 @@
   },
   "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
   "dependencies": {
-    "ziko": "^0.0.18"
+    "ziko": "^0.0.22"
   }
 }
