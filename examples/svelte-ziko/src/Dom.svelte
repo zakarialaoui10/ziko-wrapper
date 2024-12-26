@@ -4,6 +4,8 @@
   
   let containerRef;
   export let ui;
+  export let wrapper = 'ziko-wrapper';
+  export let engine = 'ziko.js';
   
   __Ziko__.__Config__.setDefault({ render: false });
 
@@ -21,7 +23,7 @@
 
 <div 
   bind:this={containerRef} 
-  data-wrapper= "ziko-wrapper" 
-  data-engine= "ziko.js"
+  data-wrapper={wrapper} 
+  data-engine={engine}
   style="display: contents;"
 ></div>
