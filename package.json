@@ -7,16 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "exports": {
-    "./react": "./react/index.js",
-    "./solid": "./solid/index.js",
-    "./svelte": "./svelte/index.js",
-    "./preact": "./preact/index.js",
-    "./vue": "./vue/index.js",
-    "./dom/react": "./dom/react/index.js",
-    "./dom/solid": "./dom/solid/index.js",
-    "./dom/svelte": "./dom/svelte/index.js",
-    "./dom/preact": "./dom/preact/index.js",
-    "./dom/vue": "./dom/vue/index.js"
+    "./react": "./wrappers/react/index.js",
+    "./solid": "./wrappers/solid/index.js",
+    "./svelte": "./wrappers/svelte/index.js",
+    "./preact": "./wrappers/preact/index.js",
+    "./vue": "./wrappers/vue/index.js",
+    "./astro": "./wrappers/astro/index.js",
+    "./dom/react": "./wrappers/dom/react/index.js",
+    "./dom/solid": "./wrappers/dom/solid/index.js",
+    "./dom/svelte": "./wrappers/dom/svelte/index.js",
+    "./dom/preact": "./wrappers/dom/preact/index.js",
+    "./dom/vue": "./wrappers/dom/vue/index.js"
   },
   "repository": {
     "type": "git",
