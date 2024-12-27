@@ -10,16 +10,20 @@
 import {ZikoUIElement} from "ziko"
 export default {
   props: {
-    // ui: Object
-    ui : Function
+    ui: {
+      type: [Function, Array],
+      required: true,         
+      default: null          
+    }
+    // ui : Function | [Function]
   },
   mounted() {
     __Ziko__.__Config__.setDefault({render:false})
     const Wrapper = this.$refs.containerRef
-    if (Wrapper && this.ui instanceof ZikoUIElement) {
+    if (Wrapper) {
       Wrapper.innerHTML = "";
       if(this.ui instanceof ZikoUIElement) Wrapper.appendChild(this.ui.element);
-      // else if(this.ui instanceof f) Wrapper.appendChild(this.ui().element);
+      else if(this.ui instanceof Array) this.ui.forEach(item=> Wrapper.appendChild(item.element))
     }
   }
 };

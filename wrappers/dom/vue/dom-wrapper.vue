@@ -1,20 +1,38 @@
 <template>
     <div 
       ref="containerRef" 
-      data-wrapper="ziko-wrapper"
+      :data-wrapper="wrapper"
+      :data-engine="engine"
       style="display: contents;"
-    ></div>
+    >
+    </div>
 </template>
 <script>
   export default {
     props: {
-      ui: Function
+      ui: {
+        type: [Function, Array],
+        required: true,         
+        default: null          
+      },
+      wrapper: {
+        type: String,
+        required: true,
+        default: 'ziko-wrapper'
+      },
+      engine: {
+        type: String,
+        required: true,
+        default: 'ziko.js'
+      }
     },
     mounted() {
-      if (this.$refs.containerRef && this.ui) {
-        this.$refs.containerRef.innerHTML = "";
-        this.$refs.containerRef.appendChild(this.ui());
-      }
+    const Wrapper = this.$refs.containerRef
+    if (Wrapper) {
+      Wrapper.innerHTML = "";
+      if(this.ui instanceof HTMLElement) Wrapper.appendChild(this.ui);
+      else if(this.ui instanceof Array) this.ui.forEach(item=> Wrapper.appendChild(item))
     }
+  }
   };
 </script>
