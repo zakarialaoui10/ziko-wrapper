@@ -4,26 +4,33 @@
     data-wrapper="ziko-wrapper"
     data-engine="ziko.js"
     style="display: contents;"
-  ></div>
+  >
+    <!-- prevent direct rendering -->
+    <template v-if="false">
+      <slot></slot>
+    </template>
+  </div>
 </template>
+
 <script>
-import {ZikoUIElement} from "ziko"
+import { ZikoUIElement } from "ziko";
+
 export default {
-  props: {
-    ui: {
-      type: [Function, Array],
-      required: true,         
-      default: null          
-    }
-    // ui : Function | [Function]
-  },
   mounted() {
-    __Ziko__.__Config__.setDefault({render:false})
-    const Wrapper = this.$refs.containerRef
+    const Wrapper = this.$refs.containerRef;
     if (Wrapper) {
+      __Ziko__.__Config__.setDefault({ render: false });
       Wrapper.innerHTML = "";
-      if(this.ui instanceof ZikoUIElement) Wrapper.appendChild(this.ui.element);
-      else if(this.ui instanceof Array) this.ui.forEach(item=> Wrapper.appendChild(item.element))
+
+      const children = this.$slots.default?.();
+      if (children) {
+        children.forEach(child => {
+          const { type, props } = child;
+          const ZikoUI = type(props);
+          if (ZikoUI instanceof ZikoUIElement) Wrapper.append(ZikoUI.element); 
+          else throw Error("Invalid child: Expected a ZikoUIElement.");
+        });
+      }
     }
   }
 };

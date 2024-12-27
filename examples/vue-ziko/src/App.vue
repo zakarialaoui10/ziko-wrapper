@@ -1,13 +1,13 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
 import {h1} from "ziko"
 import { ZikoWrapper } from "ziko-wrapper/vue"
-const Header=(color)=>h1("Hello from zikojs").style({color})
+const Header2=({color})=>h1("Hello from zikojs").style({color})
 </script>
 
 <template>
-  <!-- <ZikoWrapper :ui="Header()"/> -->
-  <ZikoWrapper :ui="[Header('red'), Header('green')]"/>
+  <ZikoWrapper>
+    <Header2 color="blue"/>
+  </ZikoWrapper>
 </template>
 
 <style scoped>
