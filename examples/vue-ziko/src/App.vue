@@ -1,13 +1,25 @@
 <script setup>
 import {h1} from "ziko"
-import { ZikoWrapper } from "ziko-wrapper/vue"
+import { ZikoWrapper, DomWrapper } from "ziko-wrapper/vue"
 const Header2=({color})=>h1("Hello from zikojs").style({color})
+
+const Dom=({color = "red"}={})=>{
+  const element = document.createElement("h2")
+  element.innerText = "Hi "
+  element.style.color = color;
+  return element
+}
 </script>
 
 <template>
   <ZikoWrapper>
     <Header2 color="blue"/>
   </ZikoWrapper>
+
+  <DomWrapper wrapper="dom">
+    <Dom color="green"/>
+  </DomWrapper>
+
 </template>
 
 <style scoped>

@@ -19,9 +19,8 @@ export default {
   mounted() {
     const Wrapper = this.$refs.containerRef;
     if (Wrapper) {
-      __Ziko__.__Config__.setDefault({ render: false });
+      globalThis?.__Ziko__?.__Config__?.setDefault({ render: false });
       Wrapper.innerHTML = "";
-
       const children = this.$slots.default?.();
       if (children) {
         children.forEach(child => {
