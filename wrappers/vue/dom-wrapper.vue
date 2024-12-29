@@ -3,6 +3,7 @@
     ref="containerRef" 
     :data-wrapper="wrapper"
     :data-engine="engine"
+    v-bind="{ 'data-wrapper': wrapper, 'data-engine': engine }"
     style="display: contents;"
   >
     <!-- Use a conditional rendering to prevent direct rendering -->

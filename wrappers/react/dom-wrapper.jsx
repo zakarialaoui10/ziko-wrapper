@@ -17,7 +17,7 @@ export function DomWrapper({ children, engine, wrapper }) {
   }, [children]);
   return <div 
     {...(engine && { "data-engine": engine})}
-    {...(wrapper && { "data-wrapper": wrapper})} 
+    {...(wrapper && { "data-wrapper": wrapper})}
     ref={containerRef}
     style={{display : "contents"}}
     ></div>;
