@@ -1,8 +1,6 @@
 <template>
   <div 
     ref="containerRef" 
-    :data-wrapper="wrapper"
-    :data-engine="engine"
     v-bind="{ 'data-wrapper': wrapper, 'data-engine': engine }"
     style="display: contents;"
   >
@@ -19,12 +17,10 @@ export default {
     wrapper: {
       type: String,
       required: false,
-      default: 'ziko-wrapper'
     },
     engine: {
       type: String,
       required: false,
-      default: 'ziko.js'
     }
   },
   mounted() {
