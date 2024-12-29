@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "vue": "^3.5.12",
-    "ziko": "^0.0.22"
+    "ziko": "^0.0.22",
+    "ziko-wrapper": "^0.0.17"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
