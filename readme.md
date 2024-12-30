@@ -67,7 +67,14 @@ import HelloFromZiko from "./HelloFromZiko.js"
 </template>
 ``` 
 #### Svelte 
-
+```jsx
+---
+import ZikoWrapper from "ziko-wrapper/svelte";
+import HelloFromZiko from "./HelloFromZiko.js"
+---
+<ZikoWrapper ui>
+    <HelloFromZiko color="orange"/>
+```
 #### Astro 
 ```jsx
 ---
