@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte';
     export let ui; 
-    export let wrapper;
-    export let engine;
+    export let wrapper = null;
+    export let engine = null;
     
     let containerRef;
     $: Attributes = {
