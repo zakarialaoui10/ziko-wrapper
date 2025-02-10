@@ -1,6 +1,6 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "integrate zikojs elements within other framework like vue react ..",
   "type": "module",
   "scripts": {
@@ -36,6 +36,8 @@
     "nuxt",
     "svelteKit",
     "astro",
+    "astro-component",
+    "withastro",
     "front-end",
     "framework",
     "mobile"
