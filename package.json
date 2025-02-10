@@ -1,7 +1,7 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.0.19",
-  "description": "integrate zikojs elements within other framework like vue react ..",
+  "version": "0.0.20",
+  "description": "integrate zikojs elements within other ui framework like vue react solidjs svelte astro ...",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -40,7 +40,8 @@
     "withastro",
     "front-end",
     "framework",
-    "mobile"
+    "mobile",
+    "renderer"
   ],
   "author": "zakaria elalaoui",
   "license": "MIT",
@@ -49,6 +50,6 @@
   },
   "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
   "dependencies": {
-    "ziko": "^0.0.22"
+    "ziko": "^0.0.25"
   }
 }
