@@ -4,8 +4,8 @@ const astroZikojs = () => ({
         "astro:config:setup": async ({ addRenderer }) => {
             addRenderer({
                 name: "zikojs",
-                serverEntrypoint: "ziko-wrapper/wrappers/astro/server.js",
-                clientEntrypoint: "ziko-wrapper/wrappers/astro/client.js",
+                serverEntrypoint: "ziko-wrapper/astro/server",
+                clientEntrypoint: "ziko-wrapper/astro/client",
             });
         },
     },
