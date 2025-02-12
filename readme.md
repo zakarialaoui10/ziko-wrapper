@@ -4,6 +4,14 @@
 # Ziko-wrapper 
 Ziko-Wrapper is a tool that facilitates the rendering of ZikoJS elements within other frameworks and the embedding of framework-specific components into ZikoJS, enabling seamless integration and interoperability between different ecosystems.
 
+<!-- # Table Of Content
+
+- [Integrate Zikojs inside Other Environment](#integrate-zikojs-inside-other-environment)
+  - [Jsx Based]
+  - [Vue]
+  - [Svelte] -->
+
+
 ## Current Support Table for Ziko-Wrapper
 
 |Framework/Library|Integrate ZikoJS|Get Integrated in ZikoJS|Remark|
@@ -13,7 +21,7 @@ Ziko-Wrapper is a tool that facilitates the rendering of ZikoJS elements within 
 |Solid|✅ Supported|✅ Supported|
 |Vue|✅ Supported|✅ Supported|
 |Preact|✅ Supported|✅ Supported|
-|Astro|✅ Supported|❌ Not Supported|
+|Astro|✅ Supported|❌ Not Supported|[Astro](#astro)
 |Next|✅ Supported|❌ Not Supported|
 |Remix|✅ Supported|❌ Not Supported|
 |SvelteKit|✅ Supported|❌ Not Supported|

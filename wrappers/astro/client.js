@@ -4,6 +4,7 @@ export default function (wrapper) {
             return;
         wrapper.setAttribute("data-engine","ziko.js")
         const properties = props ?? {};
+        console.log({client})
         if (client !== "only") {
             console.log("! Only ")
             Component(properties).render(wrapper)
