@@ -83,7 +83,7 @@ import HelloFromZiko from "./HelloFromZiko.js"
 <ZikoWrapper ui={HelloFromZiko({color:"orange"})}/>
 ```
 #### Astro 
-- 
+- Customize the astro.config.mjs file
 ```js
 import { defineConfig } from 'astro/config';
 import ziko from "ziko-wrapper/astro"
