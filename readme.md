@@ -83,13 +83,30 @@ import HelloFromZiko from "./HelloFromZiko.js"
 <ZikoWrapper ui={HelloFromZiko({color:"orange"})}/>
 ```
 #### Astro 
+- 
+```js
+import { defineConfig } from 'astro/config';
+import ziko from "ziko-wrapper/astro"
+export default defineConfig({
+    integrations : [
+        ziko()
+    ]
+})
+```
+- Define The component 
+```js
+// HelloFromZikoJs.js
+import {p} from "ziko"
+export default HelloFromZikoJs=({color})=>p("Hello From Zikojs").style({color})
+```
+- Render The component
 ```jsx
 ---
  import HelloFromZiko from "./HelloFromZiko.js"
 ---
 <HelloFromZiko 
   color="orange"
-  client:only="ziko" 
+  client:only 
 />
 ```
 ## Integrate Other Framewrok components inside Zikojs  
