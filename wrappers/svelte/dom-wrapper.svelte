@@ -18,7 +18,7 @@
         else if(ui instanceof Array){
           ui.forEach(item => containerRef.appendChild(item));
         }
-        console.warn("UI element is not an instance of HTMLElement.");
+        else console.warn("UI element is not an instance of HTMLElement.");
       }
     });
   </script>
