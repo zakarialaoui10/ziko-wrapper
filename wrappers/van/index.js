@@ -1,0 +1,1 @@
+import './vanify.js';

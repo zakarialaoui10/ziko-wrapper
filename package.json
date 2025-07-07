@@ -1,6 +1,6 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "integrate zikojs elements within other ui framework like vue react solidjs svelte astro ...",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
     "./preact": "./wrappers/preact/index.js",
     "./vue": "./wrappers/vue/index.js",
     "./astro": "./wrappers/astro/index.js",
+    "./van":"./wrappers/van/index.js",
     "./astro/client":"./wrappers/astro/client.js",
     "./astro/server":"./wrappers/astro/server.js",
     "./dom/react": "./wrappers/dom/react/index.js",
