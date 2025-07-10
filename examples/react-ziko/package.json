@@ -12,8 +12,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "ziko": "^0.0.22",
-    "ziko-wrapper": "^0.0.17"
+    "ziko": "^0.0.22"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

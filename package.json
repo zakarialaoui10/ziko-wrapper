@@ -13,9 +13,9 @@
     "./preact": "./wrappers/preact/index.js",
     "./vue": "./wrappers/vue/index.js",
     "./astro": "./wrappers/astro/index.js",
-    "./van":"./wrappers/van/index.js",
-    "./astro/client":"./wrappers/astro/client.js",
-    "./astro/server":"./wrappers/astro/server.js",
+    "./van": "./wrappers/van/index.js",
+    "./astro/client": "./wrappers/astro/client.js",
+    "./astro/server": "./wrappers/astro/server.js",
     "./dom/react": "./wrappers/dom/react/index.js",
     "./dom/solid": "./wrappers/dom/solid/index.js",
     "./dom/svelte": "./wrappers/dom/svelte/index.js",
@@ -53,6 +53,6 @@
   },
   "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
   "dependencies": {
-    "ziko": "^0.0.25"
+    "ziko": "^0.0.27"
   }
 }

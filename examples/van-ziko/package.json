@@ -1,0 +1,19 @@
+{
+  "name": "van-ziko",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview --port 5173",
+    "preview": "vite build && vite preview --port 5173",
+    "serve": "vite serve dist/ --host --port 4173"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "vanjs-core": "^1.5.5"
+  }
+}
