@@ -1,0 +1,14 @@
+---
+title : "Vanjs Zikojs Interleaving"
+__props__ : {
+    counter_start : 0
+}
+---
+
+import Hello from "./Hello.js"
+
+# Hello Astro Users 
+
+This is an MDZ Article injected into Astro App
+
+<Hello msg="This is an interactive element" />
