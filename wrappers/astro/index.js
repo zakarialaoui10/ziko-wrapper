@@ -3,7 +3,7 @@ const astroZikojs = () => ({
     hooks: {
         "astro:config:setup": async ({ addRenderer }) => {
             addRenderer({
-                name: "zikojs",
+                name: "astro-zikojs",
                 serverEntrypoint: "ziko-wrapper/astro/server",
                 clientEntrypoint: "ziko-wrapper/astro/client",
             });

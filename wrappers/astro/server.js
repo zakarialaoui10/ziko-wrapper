@@ -1,11 +1,21 @@
+import { renderToString } from "ziko-server"
 function check(Component, attributes) {
     if (typeof Component !== "function") return false;
 	return true
 }
 async function renderToStaticMarkup(Component, props, { default: children, ...slotted }, metadata) {
-    const properties = props ?? {};
-    const html = "<p>To Be Removed</p>"
-    return { html };
+    const UI = Component(props)
+    const html = renderToString(UI)
+    console.log({metadata})
+    return { 
+        html,
+        // hydration: {
+        //     ...metadata,
+        //     directive: "astro-zikojs",               
+        //     // componentExport: "default",        
+        //     // componentUrl: metadata.filePath,   
+        // },
+     };
 }
 
 export default {
