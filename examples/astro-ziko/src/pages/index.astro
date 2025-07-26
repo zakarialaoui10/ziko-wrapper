@@ -2,6 +2,8 @@
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Hello from '../components/Hello.js';
+
+const colors=["red","green","blue","yellow","black"]
 // import Mdz from "../components/Mdz.mdz"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -9,7 +11,10 @@ import Hello from '../components/Hello.js';
 ---
 
 <!-- <Hello msg="Hello Ssr"/> -->
-<Hello client:load/>
 <!-- <div style="width: 400px; border: 2px darkblue solid">
 <Mdz client:load/>
 </div> -->
+
+<Hello msg="Server Only" color="green"/>
+<Hello msg="Client Only" color="darkblue" client:only/>
+<Hello msg="Client Load" color={colors[Math.floor(Math.random()*5)]} client:load/>

@@ -8,10 +8,11 @@ const Ex = ({color}) => p().style({color})
 const App = () =>{
   return(
     <ZikoWrapper>
-      <Ex color="red">
+      <Heading msg="Hello world" />
+      {/* <Ex color="red">
           <Heading msg="hello world"/>
           <Heading msg="hello world"/>
-      </Ex>
+      </Ex> */}
     </ZikoWrapper>
   )
 }

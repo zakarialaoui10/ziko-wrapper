@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.12.0",
-    "ziko": "^0.0.27"
+    "ziko": "^0.0.27",
+    "ziko-wrapper": "^0.0.27"
   }
 }
