@@ -8,12 +8,13 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "preact": "^10.24.3",
-    "ziko": "^0.0.22"
-  },
   "devDependencies": {
     "@preact/preset-vite": "^2.9.1",
     "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "preact": "^10.26.9",
+    "ziko": "^0.0.29",
+    "ziko-wrapper": "^0.0.27"
   }
 }
