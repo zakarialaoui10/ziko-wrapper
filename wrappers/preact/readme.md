@@ -6,7 +6,7 @@ Ziko-Wrapper is a tool that facilitates the rendering of ZikoJS elements within 
 
 ## Demos 
 
-- Ziko In Preact : [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/zakarialaoui10/ziko-wrapper/tree/main/demos/preact-ziko)
+- Ziko In Preact : [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/zakarialaoui10/ziko-wrapper/tree/main/demos/ziko-in-preact)
 
 
 ## Use Zikojs Inside Preact 
