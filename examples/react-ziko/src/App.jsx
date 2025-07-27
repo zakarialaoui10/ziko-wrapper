@@ -11,8 +11,8 @@ const App = () =>{
   return(
     <ZikoWrapper>
       <Ex color="red">
-          {/* <Heading msg="hello world"/>
-          <Heading msg="hello world"/> */}
+          <Heading msg="hello world"/>
+          <Heading msg="hello world"/>
       </Ex>
     </ZikoWrapper>
   )
