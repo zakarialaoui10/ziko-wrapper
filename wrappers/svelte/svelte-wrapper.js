@@ -1,7 +1,7 @@
-import { ZikoUIElement } from "ziko";
+import { UIElement } from "ziko";
 import { mount } from "svelte";
 function SvelteWrapper(Component, props = {}){
-    let ui = new ZikoUIElement("div").setAttr({
+    let ui = new UIElement("div").setAttr({
         dataWrapper : "svelte"
     })
     mount(Component,{

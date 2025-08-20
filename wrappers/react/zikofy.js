@@ -1,4 +1,4 @@
-import { ZikoUIElement } from "ziko";
+import { UIElementrom "ziko";
 import { createRoot } from "react-dom/client";
 import { isValidElement, createElement } from "react";
 
@@ -6,7 +6,7 @@ const zikofy = (Component, props) => {
   const container = document.createElement("div");
   const root = createRoot(container);
   const element = isValidElement(Component) ? Component : createElement(Component, props);
-  const ui = new ZikoUIElement(container)
+  const ui = new UIElementtainer)
     .style({
       display: "contents",
     })

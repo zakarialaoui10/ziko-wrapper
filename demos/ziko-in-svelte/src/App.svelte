@@ -1,5 +1,6 @@
-<script>
-  import {h1} from "ziko"
+<script >
+  import { tags } from "ziko"
+  const { h1 } = tags;
   import { ZikoWrapper } from "ziko-wrapper/svelte"
   const Heading = ({msg}) => h1(msg)
 </script>

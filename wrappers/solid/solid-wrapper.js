@@ -1,8 +1,8 @@
-import {ZikoUIElement} from "ziko"
+import {UIElement} from "ziko"
 import { render } from 'solid-js/web'
 import { createComponent } from 'solid-js'
 function SolidWrapper(Component, props){
-    let ui=new ZikoUIElement("div").setAttr({
+    let ui=new UIElement("div").setAttr({
         dataWrapper : "solid-js"
     }).style({
         display : "contents"

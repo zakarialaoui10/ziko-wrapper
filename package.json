@@ -1,6 +1,6 @@
 {
   "name": "ziko-wrapper",
-  "version": "0.28.0",
+  "version": "0.28.2",
   "description": "integrate zikojs elements within other ui framework like vue react solidjs svelte astro ...",
   "type": "module",
   "scripts": {
@@ -54,7 +54,7 @@
   "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
   "dependencies": {
     "extendom": "^0.0.0",
-    "ziko": "^0.34.2",
+    "ziko": "^0.40.1",
     "ziko-server": "^0.9.1"
   }
 }

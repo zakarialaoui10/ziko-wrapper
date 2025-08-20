@@ -1,5 +1,5 @@
 import { ReactNode, RefObject, ReactElement, FunctionComponent, ComponentClass, JSX } from "react";
-import { ZikoUIElement } from "ziko";
+import { UIElement } from "ziko";
 
 interface WrapperProps {
     children?: ReactNode;
@@ -12,9 +12,9 @@ export declare const containerRef: RefObject<HTMLDivElement>;
 export declare function zikofy(
     Component: ReactElement | FunctionComponent<any> | ComponentClass<any>,
     props?: Record<string, any>
-): ZikoUIElement;
+): UIElement;
 
 // export declare function ReactWrapper(
 //     Component: ReactElement | FunctionComponent<any> | ComponentClass<any>,
 //     props?: Record<string, any>
-// ): ZikoUIElement;
+// ): UIElement;

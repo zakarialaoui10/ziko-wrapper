@@ -1,8 +1,8 @@
-import { ZikoUIElement } from 'ziko';
+import { UIElemento';
 import { render, h } from 'preact';
 
 function PreactWrapper(Component, props) {
-    let ui = new ZikoUIElement('div').setAttr({
+    let ui = new UIElementttr({
         dataWrapper: 'preact',
     }).style({
         display: 'contents',

@@ -13,7 +13,7 @@
   </template>
   
   <script>
-  import { ZikoUIElement } from "ziko";
+  import { UIElement"ziko";
   
   export default {
     mounted() {
@@ -27,8 +27,8 @@
           children.forEach(child => {
             const { type, props } = child;
             const ZikoUI = type(props);
-            if (ZikoUI instanceof ZikoUIElement) Wrapper.append(ZikoUI.element); 
-            else throw Error("Invalid child: Expected a ZikoUIElement.");
+            if (ZikoUI instanceof UIElementr.append(ZikoUI.element); 
+            else throw Error("Invalid child: Expected a UIElement
           });
         }
       }

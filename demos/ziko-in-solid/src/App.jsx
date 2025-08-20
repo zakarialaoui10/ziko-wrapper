@@ -1,19 +1,22 @@
-import {h1, p} from "ziko"
+import { tags } from "ziko"
 import { ZikoWrapper } from "ziko-wrapper/solid"
 
-const Heading = ({msg, color = "black"}={}) => h1(msg).style({color})
+const {p, h1, section} = tags
+
+// const Container = ({children}) => p({}, ...children.map(n=>n()))
+const Heading = ({msg , color}={}) => h1(msg).style({color })
 const Ex = ({color, children}) => {
-  // console.log(children)
-  return p(...children).style({color})
-  // return p(children[0], children[1].style({background : "gold"})).style({color})
+  return section(...children.map(n=>n())).style({color})
 }
 const App = () =>{
   return(
     <ZikoWrapper engine="ll">
+      {/* <Container> */}
       <Ex color="red">
-        <Heading msg="hello world" color="red"/>
+        <Heading msg="hello " color = 'cyan'/>
         <Heading msg="hello world"/>
       </Ex>
+      {/* </Container> */}
     </ZikoWrapper>
   )
 }

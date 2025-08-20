@@ -9,11 +9,11 @@ export function ZikoWrapper(props) {
       ref={(Wrapper) =>{
         globalThis.addEventListener("DOMContentLoaded", () => {
           const resolvedChildren = children(() => props.children);
-          const childElements = resolvedChildren.toArray();
-          childElements.forEach(child => {
-            if (child) {
-              child.unrender()
-              Wrapper.append(child.element);
+          const items = resolvedChildren.toArray();
+          items.forEach(item => {
+            if (item) {
+              item.unrender()
+              Wrapper.append(item.element);
             }
           });
         })

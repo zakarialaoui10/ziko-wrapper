@@ -1,8 +1,8 @@
-import { ZikoUIElement } from 'ziko';
+import { UIElementrom 'ziko';
 import { createApp, h } from 'vue';
 
 function VueWrapper(Component, props) {
-    let ui = new ZikoUIElement('div').setAttr({
+    let ui = new UIElementv').setAttr({
         dataWrapper: 'vue',
     }).style({
         display: 'contents',
