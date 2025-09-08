@@ -54,7 +54,7 @@
   "homepage": "https://github.com/zakarialaoui10/ziko-wrapper#readme",
   "dependencies": {
     "extendom": "^0.0.0",
-    "ziko": "^0.40.1",
-    "ziko-server": "^0.9.1"
+    "ziko": "^0.45.5",
+    "ziko-server": "^0.9.4"
   }
 }

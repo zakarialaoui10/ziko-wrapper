@@ -1,4 +1,4 @@
-import { renderToString } from "ziko-server"
+import { renderToString } from "ziko-server/server-only-utils"
 function check(Component, attributes) {
     if (typeof Component !== "function") return false;
 	return true
