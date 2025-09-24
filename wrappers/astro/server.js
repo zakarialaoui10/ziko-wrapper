@@ -1,10 +1,11 @@
 import { renderToString } from "ziko-server/server-only-utils"
+import { isAsync } from "ziko-server/utils"
 function check(Component, attributes) {
     if (typeof Component !== "function") return false;
 	return true
 }
 async function renderToStaticMarkup(Component, props, { default: children, ...slotted }, metadata) {
-    const UI = Component(props)
+    const UI = isAsync(Component) ? await Component(props) : Component(props)
     const html = renderToString(UI)
     // console.log({metadata})
     return { 
