@@ -1,68 +1,69 @@
-import { useRef, useEffect, isValidElement, createElement } from 'react';
-import { createRoot } from 'react-dom/client';
+import { useRef, useEffect } from 'preact/hooks';
+import { render, createElement, isValidElement } from 'preact';
 
 const isDOMElement = (obj) => obj instanceof HTMLElement;
-const isReactElement = (child) => isValidElement(child);
+const isPreactElement = (child) => isValidElement(child);
 
-// Transform React elements to DOM, or return DOM elements as-is
+// Transform Preact elements to DOM, or return DOM elements as-is
 const domify = (element, ...args) => {
   // If it's already a DOM element, return it directly
   if (isDOMElement(element)) return element;
-  
-  // If it's a React element, bridge it and return the DOM container
-  if (isReactElement(element)) {
+
+  // If it's a Preact element, bridge it and return the DOM container
+  if (isPreactElement(element)) {
     const container = document.createElement('div');
     container.style.display = 'contents';
-    const root = createRoot(container);
-    root.render(element);
-    // Store root for potential cleanup
-    container._reactRoot = root;
+    render(element, container);
+    // Mark for cleanup tracking
+    container._preactRendered = true;
     return container;
   }
 
-  // If it's a function (React component), create element with props and children
+  // If it's a function (Preact component), create element with props and children
   if (typeof element === 'function') {
     const [props, ...children] = args;
-    const reactElement = createElement(element, props, ...children);
-    return domify(reactElement);
+    const preactElement = createElement(element, props, ...children);
+    return domify(preactElement);
   }
 
   return null;
 };
 
-// Process mixed children (React elements or DOM elements)
+// Process mixed children (Preact elements or DOM elements)
 const processChild = (child) => {
   // If it's a function, call it and process the result
   if (typeof child === 'function') {
     const result = child();
     return processChild(result);
   }
+
   // If it's an object with .element property (like ZikoJS UIElement)
   if (
     child &&
     typeof child === 'object' &&
     'element' in child &&
     isDOMElement(child.element)
-  ) return child.element;
-  
-  // Use domify for all other cases (DOM elements, React elements, or React components)
+  )
+    return child.element;
+
+  // Use domify for all other cases (DOM elements, Preact elements, or Preact components)
   return domify(child);
 };
 
 export function DOMWrapper({ children }) {
   const containerRef = useRef(null);
-  const mountedRootsRef = useRef([]);
+  const mountedContainersRef = useRef([]);
 
   useEffect(() => {
     if (!containerRef.current || !children) return;
 
-    // Cleanup previous React roots
-    mountedRootsRef.current.forEach((root) => {
-      if (root?.unmount) {
-        root.unmount();
+    // Cleanup previous Preact renders
+    mountedContainersRef.current.forEach((container) => {
+      if (container?._preactRendered) {
+        render(null, container); // Unmount Preact components
       }
     });
-    mountedRootsRef.current = [];
+    mountedContainersRef.current = [];
 
     containerRef.current.innerHTML = '';
     const childArray = Array.isArray(children) ? children : [children];
@@ -73,21 +74,21 @@ export function DOMWrapper({ children }) {
       if (processedElement instanceof HTMLElement) {
         containerRef.current.appendChild(processedElement);
 
-        // Track React roots for cleanup
-        if (processedElement._reactRoot) {
-          mountedRootsRef.current.push(processedElement._reactRoot);
+        // Track Preact-rendered containers for cleanup
+        if (processedElement._preactRendered) {
+          mountedContainersRef.current.push(processedElement);
         }
       }
     });
 
     // Cleanup function
     return () => {
-      mountedRootsRef.current.forEach((root) => {
-        if (root?.unmount) {
-          root.unmount();
+      mountedContainersRef.current.forEach((container) => {
+        if (container?._preactRendered) {
+          render(null, container);
         }
       });
-      mountedRootsRef.current = [];
+      mountedContainersRef.current = [];
     };
   }, [children]);
 
@@ -95,7 +96,7 @@ export function DOMWrapper({ children }) {
 }
 
 // Pure DOM element creators
-const createButton = (text, onClick) => {
+const CreateButton = (text, onClick) => {
   const btn = document.createElement('button');
   btn.textContent = text;
   btn.style.cssText =
@@ -104,14 +105,14 @@ const createButton = (text, onClick) => {
   return btn;
 };
 
-const createParagraph = (text) => {
+const CreateParagraph = (text) => {
   const p = document.createElement('p');
   p.textContent = text;
   p.style.margin = '10px 0';
   return p;
 };
 
-const createCard = (title, ...children) => {
+const CreateCard = (title, ...children) => {
   const card = document.createElement('div');
   card.style.cssText =
     'padding: 15px; border: 2px solid #4CAF50; margin: 10px; border-radius: 8px; background: #f0f0f0;';
@@ -131,13 +132,13 @@ const createCard = (title, ...children) => {
   return card;
 };
 
-// You can also use domify directly with React components
-const createReactButton = (onClick, ...children) => {
-  return domify(ReactButton, { onClick }, ...children);
+// You can also use domify directly with Preact components
+const createPreactButton = (onClick, ...children) => {
+  return domify(PreactButton, { onClick }, ...children);
 };
 
-// React component
-function ReactCard({ title, children, color = '#2196F3' }) {
+// Preact component
+function PreactCard({ title, children, color = '#2196F3' }) {
   return (
     <div
       style={{
@@ -154,7 +155,7 @@ function ReactCard({ title, children, color = '#2196F3' }) {
   );
 }
 
-function ReactButton({ children, onClick }) {
+function PreactButton({ children, onClick }) {
   return (
     <button
       onClick={onClick}
@@ -174,93 +175,93 @@ function ReactButton({ children, onClick }) {
 }
 
 // Demo
-export default function Demo() {
+export function App() {
   return (
     <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <h2>DOMWrapper - Interleaving Demo (Refactored)</h2>
+      <h2>DOMWrapper - Preact Version</h2>
       <p style={{ color: '#666' }}>
-        Seamlessly mix DOM elements and React components with domify()
+        Seamlessly mix DOM elements and Preact components with domify()
       </p>
 
       <div style={{ marginTop: '20px' }}>
         <h3>Example 1: Simple DOM Elements</h3>
         <DOMWrapper>
-          {createParagraph('This is a pure DOM paragraph')}
-          {createButton('DOM Button', () => alert('DOM button clicked!'))}
-          {createReactButton(() => alert('domified'), 'Domified Button')}
+          {CreateParagraph('This is a pure DOM paragraph')}
+          {CreateButton('DOM Button', () => alert('DOM button clicked!'))}
+          {createPreactButton(() => alert('domified'), 'Domified Button')}
         </DOMWrapper>
       </div>
 
       <div style={{ marginTop: '20px' }}>
-        <h3>Example 2: React Components with Props & Children</h3>
+        <h3>Example 2: Preact Components with Props & Children</h3>
         <DOMWrapper>
-          {createCard(
-            'DOM Card with React Inside',
-            createParagraph('DOM paragraph'),
-            <ReactCard title="Props Work!" color="#FF9800">
-              <p>This ReactCard has props: title and color</p>
-              <ReactButton onClick={() => alert('Children work too!')}>
+          {CreateCard(
+            'DOM Card with Preact Inside',
+            CreateParagraph('DOM paragraph'),
+            <PreactCard title="Props Work!" color="#FF9800">
+              <p>This PreactCard has props: title and color</p>
+              <PreactButton onClick={() => alert('Children work too!')}>
                 Click Me - I'm a child!
-              </ReactButton>
-            </ReactCard>,
-            <ReactCard title="Multiple React Components">
-              <p>You can domify multiple React components</p>
+              </PreactButton>
+            </PreactCard>,
+            <PreactCard title="Multiple Preact Components">
+              <p>You can domify multiple Preact components</p>
               <p>Each with their own props and children</p>
-            </ReactCard>
+            </PreactCard>
           )}
         </DOMWrapper>
       </div>
 
       <div style={{ marginTop: '20px' }}>
-        <h3>Example 3: DOM → React</h3>
+        <h3>Example 3: DOM → Preact</h3>
         <DOMWrapper>
-          {createCard(
+          {CreateCard(
             'DOM Card',
-            createParagraph('This is DOM content'),
-            <ReactCard title="Nested React Card">
-              <p>This is React content inside a DOM element!</p>
-              <ReactButton onClick={() => alert('React button!')}>
-                React Button
-              </ReactButton>
-            </ReactCard>
+            CreateParagraph('This is DOM content'),
+            <PreactCard title="Nested Preact Card">
+              <p>This is Preact content inside a DOM element!</p>
+              <PreactButton onClick={() => alert('Preact button!')}>
+                Preact Button
+              </PreactButton>
+            </PreactCard>
           )}
         </DOMWrapper>
       </div>
 
       <div style={{ marginTop: '20px' }}>
-        <h3>Example 4: React → DOM</h3>
+        <h3>Example 4: Preact → DOM</h3>
         <DOMWrapper>
-          <ReactCard title="React Card" color="#FF9800">
-            <p>React component here</p>
+          <PreactCard title="Preact Card" color="#FF9800">
+            <p>Preact component here</p>
             <DOMWrapper>
-              {createParagraph('DOM content inside React!')}
-              {createButton('DOM Button Inside React', () => alert('Works!'))}
+              {CreateParagraph('DOM content inside Preact!')}
+              {CreateButton('DOM Button Inside Preact', () => alert('Works!'))}
             </DOMWrapper>
-          </ReactCard>
+          </PreactCard>
         </DOMWrapper>
       </div>
 
       <div style={{ marginTop: '20px' }}>
-        <h3>Example 5: Deep Nesting (DOM → React → DOM → React)</h3>
+        <h3>Example 5: Deep Nesting (DOM → Preact → DOM → Preact)</h3>
         <DOMWrapper>
-          {createCard(
+          {CreateCard(
             'Level 1: DOM',
-            createParagraph('DOM content'),
-            <ReactCard title="Level 2: React">
-              <p>React component</p>
+            CreateParagraph('DOM content'),
+            <PreactCard title="Level 2: Preact">
+              <p>Preact component</p>
               <DOMWrapper>
-                {createCard(
+                {CreateCard(
                   'Level 3: DOM',
-                  createParagraph('Back to DOM!'),
-                  <ReactCard title="Level 4: React" color="#FF9800">
+                  CreateParagraph('Back to DOM!'),
+                  <PreactCard title="Level 4: Preact" color="#FF9800">
                     <p>🎉 Full interleaving works!</p>
-                    <ReactButton onClick={() => alert('Deep nested button!')}>
+                    <PreactButton onClick={() => alert('Deep nested button!')}>
                       Click Me
-                    </ReactButton>
-                  </ReactCard>
+                    </PreactButton>
+                  </PreactCard>
                 )}
               </DOMWrapper>
-            </ReactCard>
+            </PreactCard>
           )}
         </DOMWrapper>
       </div>
@@ -269,13 +270,13 @@ export default function Demo() {
         <h3>Example 6: Mixed Array</h3>
         <DOMWrapper>
           {[
-            createParagraph('First DOM element'),
-            <ReactCard title="React in the middle">
+            CreateParagraph('First DOM element'),
+            <PreactCard title="Preact in the middle">
               <DOMWrapper>
-                {createButton('Nested DOM Button', () => alert('Nested!'))}
+                {CreateButton('Nested DOM Button', () => alert('Nested!'))}
               </DOMWrapper>
-            </ReactCard>,
-            createParagraph('Last DOM element'),
+            </PreactCard>,
+            CreateParagraph('Last DOM element'),
           ]}
         </DOMWrapper>
       </div>

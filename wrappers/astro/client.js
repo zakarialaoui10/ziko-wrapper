@@ -8,11 +8,11 @@ export default function (wrapper) {
         wrapper.setAttribute("data-engine","zikojs")
         const properties = props ?? {};
         switch(client){
-            case "only" : Component(properties).render(wrapper); break;
+            case "only" : Component(properties).mount(wrapper); break;
             default : {
                 wrapper.innerHTML = ""
                 console.log(`Client Hydration : ${Component}`)
-                 Component(properties).render(wrapper); break;
+                 Component(properties).mount(wrapper); break;
             }
         }
     };
